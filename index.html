@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoni & Noy | Faire-part</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Noto+Serif+Hebrew:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="intro-active">
+    <section class="intro-overlay" id="intro-overlay" aria-label="Accueil du faire-part">
+      <div class="invitation-card cover-card intro-card">
+        <div class="intro-lang-switch" role="group" aria-label="Choix de langue">
+          <button type="button" class="lang-button is-active" data-lang="fr">FR</button>
+          <button type="button" class="lang-button" data-lang="he">HE</button>
+        </div>
+
+        <div class="intro-monogram monogram" aria-label="Monogramme Noy et Yoni">
+          <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
+            <defs>
+              <mask id="monogram-n-cut-intro">
+                <rect width="240" height="320" fill="white"></rect>
+                <rect x="148" y="30" width="52" height="248" fill="black"></rect>
+              </mask>
+            </defs>
+            <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-intro)">N</text>
+            <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
+          </svg>
+        </div>
+
+        <div class="intro-countdown-wrapper">
+          <p class="intro-countdown-title" id="intro-countdown-title">
+          </p>
+
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="countdown-item">
+              <span class="countdown-value" data-countdown="days">0</span>
+              <span class="countdown-label" data-countdown-label="days">Jours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" data-countdown="hours">0</span>
+              <span class="countdown-label" data-countdown-label="hours">Heures</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" data-countdown="minutes">0</span>
+              <span class="countdown-label" data-countdown-label="minutes">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" data-countdown="seconds">0</span>
+              <span class="countdown-label" data-countdown-label="seconds">Secondes</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="intro-open-button" id="open-invitation">
+          Ouvrir l'invitation
+        </button>
+      </div>
+    </section>
+
+    <main class="page">
+      <section class="invitation-card cover-card" aria-label="Couverture du faire-part">
+        <div
+          class="cover-monogram monogram"
+          aria-label="Monogramme Noy et Yoni"
+          data-reveal="up"
+        >
+          <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
+            <defs>
+              <mask id="monogram-n-cut-cover">
+                <rect width="240" height="320" fill="white"></rect>
+                <rect x="148" y="30" width="52" height="248" fill="black"></rect>
+              </mask>
+            </defs>
+            <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-cover)">N</text>
+            <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="invitation-card details-card">
+        <div class="family-grid">
+          <div class="family-column" data-family-column="noy" data-reveal="left">
+            <p>Mr &amp; Mme grand parent maternel Noy</p>
+            <p>Mr &amp; Mme grand parent paternel Noy</p>
+            <p>Mr &amp; Mme parent Noy</p>
+          </div>
+
+          <div class="monogram" aria-label="Monogramme Noy et Yoni" data-reveal="up">
+            <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
+              <defs>
+                <mask id="monogram-n-cut-details">
+                  <rect width="240" height="320" fill="white"></rect>
+                  <rect x="148" y="30" width="52" height="248" fill="black"></rect>
+                </mask>
+              </defs>
+              <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-details)">N</text>
+              <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
+            </svg>
+          </div>
+
+          <div class="family-column" data-family-column="yoni" data-reveal="right">
+            <p>Mr &amp; Mme grand parent maternel Yoni</p>
+            <p>Mr &amp; Mme grand parent paternel Yoni</p>
+            <p>Mr &amp; Mme parent Yoni</p>
+          </div>
+        </div>
+
+        <div class="announcement" id="announcement-text" data-reveal="up">
+          <p>Ont la joie de vous faire part du mariage</p>
+          <p>de leurs petits-enfants et enfants</p>
+        </div>
+
+        <div class="names-row" data-reveal="up">
+          <div class="person" data-reveal="left">
+            <h1 class="first-name" id="first-name-noy">Noy</h1>
+            <p class="hebrew-name" id="secondary-name-noy" lang="he" dir="rtl">נוי</p>
+          </div>
+
+          <div class="ampersand" id="names-separator">&amp;</div>
+
+          <div class="person" data-reveal="right">
+            <h1 class="first-name" id="first-name-yoni">Yoni</h1>
+            <p class="hebrew-name" id="secondary-name-yoni" lang="he" dir="rtl">יוני</p>
+          </div>
+        </div>
+
+        <p class="invitation-line" id="invitation-line" data-reveal="left">
+          Et vous prient de bien vouloir les honorer de votre presence le
+        </p>
+
+        <div class="date-block" data-reveal="up">
+          <p class="date" id="event-date">Mercredi 01 Juillet 2026</p>
+          <p class="venue venue-emphasis" id="venue-name">Nom de la salle</p>
+          <p class="venue" id="venue-location">lieux de la salle</p>
+          <a
+            class="waze-button"
+            id="waze-link"
+            href="https://www.waze.com/ul?q=Bnei%20Darom%20Ashdod&navigate=yes"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ouvrir dans Waze
+          </a>
+        </div>
+
+        <div class="schedule" id="schedule-text" data-reveal="right">
+          <p>Le cocktail debutera a 19h30</p>
+          <p>La ceremonie religieuse se tiendra a 20h30</p>
+          <p>et sera suivie de la reception</p>
+        </div>
+      </section>
+
+      <section class="invitation-card rsvp-card" aria-label="Confirmation de presence">
+        <div class="rsvp-header" data-reveal="up">
+          <p class="rsvp-kicker" id="rsvp-kicker">Confirmation de presence</p>
+          <h2 class="rsvp-title" id="rsvp-title">RSVP</h2>
+          <p class="rsvp-subtitle" id="rsvp-subtitle">
+            Merci de nous confirmer votre presence et de nous laisser un petit mot.
+          </p>
+        </div>
+
+        <form class="rsvp-form" id="rsvp-form">
+          <label class="field-group" data-reveal="left">
+            <span id="label-last-name">Nom</span>
+            <input
+              type="text"
+              name="lastName"
+              id="input-last-name"
+              placeholder="Votre nom"
+              required
+            />
+          </label>
+
+          <label class="field-group" data-reveal="right">
+            <span id="label-first-name">Prenom</span>
+            <input
+              type="text"
+              name="firstName"
+              id="input-first-name"
+              placeholder="Votre prenom"
+              required
+            />
+          </label>
+
+          <fieldset class="field-group attendance-group" data-reveal="right">
+            <legend id="attendance-legend">Serez-vous present a la houppa ?</legend>
+            <div class="attendance-options">
+              <label class="choice-pill">
+                <input type="radio" name="houppa" value="oui" required />
+                <span id="attendance-yes">Oui</span>
+              </label>
+              <label class="choice-pill">
+                <input type="radio" name="houppa" value="non" />
+                <span id="attendance-no">Non</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-group field-small" data-reveal="left">
+            <span id="label-guests">Nombre de personnes</span>
+            <input
+              type="number"
+              name="guests"
+              id="input-guests"
+              min="1"
+              max="20"
+              placeholder="1"
+              required
+            />
+          </label>
+
+          <label class="field-group" data-reveal="up">
+            <span id="label-message">Un mot pour les maries</span>
+            <textarea
+              id="input-message"
+              name="message"
+              rows="5"
+              placeholder="Ecrivez votre message ici..."
+            ></textarea>
+          </label>
+
+          <div class="form-actions" data-reveal="up">
+            <button type="submit" class="submit-button" id="submit-button">Envoyer</button>
+            <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const introOverlay = document.getElementById("intro-overlay");
+      const openInvitationButton = document.getElementById("open-invitation");
+      const langButtons = document.querySelectorAll(".lang-button");
+      const countdownTitle = document.getElementById("intro-countdown-title");
+      const countdownLabels = document.querySelectorAll("[data-countdown-label]");
+      const familyColumns = {
+        noy: document.querySelector('[data-family-column="noy"]'),
+        yoni: document.querySelector('[data-family-column="yoni"]'),
+      };
+      const countdownValues = {
+        days: document.querySelector('[data-countdown="days"]'),
+        hours: document.querySelector('[data-countdown="hours"]'),
+        minutes: document.querySelector('[data-countdown="minutes"]'),
+        seconds: document.querySelector('[data-countdown="seconds"]'),
+      };
+      const rsvpForm = document.getElementById("rsvp-form");
+      const feedback = document.getElementById("form-feedback");
+      const announcementText = document.getElementById("announcement-text");
+      const firstNameNoy = document.getElementById("first-name-noy");
+      const firstNameYoni = document.getElementById("first-name-yoni");
+      const secondaryNameNoy = document.getElementById("secondary-name-noy");
+      const secondaryNameYoni = document.getElementById("secondary-name-yoni");
+      const namesSeparator = document.getElementById("names-separator");
+      const invitationLine = document.getElementById("invitation-line");
+      const eventDate = document.getElementById("event-date");
+      const venueName = document.getElementById("venue-name");
+      const venueLocation = document.getElementById("venue-location");
+      const wazeLink = document.getElementById("waze-link");
+      const scheduleText = document.getElementById("schedule-text");
+      const rsvpKicker = document.getElementById("rsvp-kicker");
+      const rsvpTitle = document.getElementById("rsvp-title");
+      const rsvpSubtitle = document.getElementById("rsvp-subtitle");
+      const labelLastName = document.getElementById("label-last-name");
+      const inputLastName = document.getElementById("input-last-name");
+      const labelFirstName = document.getElementById("label-first-name");
+      const inputFirstName = document.getElementById("input-first-name");
+      const attendanceLegend = document.getElementById("attendance-legend");
+      const attendanceYes = document.getElementById("attendance-yes");
+      const attendanceNo = document.getElementById("attendance-no");
+      const labelGuests = document.getElementById("label-guests");
+      const inputGuests = document.getElementById("input-guests");
+      const labelMessage = document.getElementById("label-message");
+      const inputMessage = document.getElementById("input-message");
+      const submitButton = document.getElementById("submit-button");
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      const coverMonogram = document.querySelector(".cover-monogram[data-reveal]");
+      const deferredRevealItems = Array.from(revealItems).filter(
+        (item) => item !== coverMonogram
+      );
+      const firstInvitationPage = document.querySelector("main.page .invitation-card");
+      const weddingDate = new Date("2026-07-01T20:30:00");
+      const introCloseDuration = 3900;
+      const introFadeDuration = 3500;
+      const revealLeadTime = 2000;
+      const coverMonogramLeadTime = 2400;
+      let currentLang = "fr";
+      let revealStarted = false;
+      let coverMonogramRevealed = false;
+      let keepIntroFocus = true;
+
+      const introTranslations = {
+        fr: {
+          title: "Compte a rebours jusqu'au mariage",
+          open: "Ouvrir l'invitation",
+          labels: {
+            days: "Jours",
+            hours: "Heures",
+            minutes: "Minutes",
+            seconds: "Secondes",
+          },
+        },
+        he: {
+          title: "ספירה לאחור עד החתונה",
+          open: "פתחו את ההזמנה",
+          labels: {
+            days: "ימים",
+            hours: "שעות",
+            minutes: "דקות",
+            seconds: "שניות",
+          },
+        },
+      };
+
+      const pageTranslations = {
+        fr: {
+          families: {
+            noy: [
+              "Mr & Mme grand parent maternel Noy",
+              "Mr & Mme grand parent paternel Noy",
+              "Mr & Mme parent Noy",
+            ],
+            yoni: [
+              "Mr & Mme grand parent maternel Yoni",
+              "Mr & Mme grand parent paternel Yoni",
+              "Mr & Mme parent Yoni",
+            ],
+          },
+          announcement: [
+            "Ont la joie de vous faire part du mariage",
+            "de leurs petits-enfants et enfants",
+          ],
+          names: {
+            noy: "Noy",
+            yoni: "Yoni",
+            secondaryNoy: "נוי",
+            secondaryYoni: "יוני",
+            separator: "&",
+          },
+          invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
+          eventDate: "Mercredi 01 Juillet 2026",
+          venueName: "Nom de la salle",
+          venueLocation: "lieux de la salle",
+          wazeLabel: "Ouvrir dans Waze",
+          wazeHref: "https://www.waze.com/ul?q=Bnei%20Darom%20Ashdod&navigate=yes",
+          schedule: [
+            "Le cocktail debutera a 19h30",
+            "La ceremonie religieuse se tiendra a 20h30",
+            "et sera suivie de la reception",
+          ],
+          rsvp: {
+            kicker: "Confirmation de presence",
+            title: "RSVP",
+            subtitle: "Merci de nous confirmer votre presence et de nous laisser un petit mot.",
+            lastName: "Nom",
+            lastNamePlaceholder: "Votre nom",
+            firstName: "Prenom",
+            firstNamePlaceholder: "Votre prenom",
+            attendance: "Serez-vous present a la houppa ?",
+            yes: "Oui",
+            no: "Non",
+            guests: "Nombre de personnes",
+            guestsPlaceholder: "1",
+            message: "Un mot pour les maries",
+            messagePlaceholder: "Ecrivez votre message ici...",
+            submit: "Envoyer",
+            feedback: "Merci, votre reponse a bien ete enregistree.",
+            submitting: "Envoi en cours...",
+            submitBusy: "Envoi...",
+            error: "Impossible d'envoyer votre reponse pour le moment. Merci de reessayer.",
+          },
+        },
+        he: {
+          families: {
+            noy: [
+              "מר וגברת הסבים מצד האם של נוי",
+              "מר וגברת הסבים מצד האב של נוי",
+              "מר וגברת ההורים של נוי",
+            ],
+            yoni: [
+              "מר וגברת הסבים מצד האם של יוני",
+              "מר וגברת הסבים מצד האב של יוני",
+              "מר וגברת ההורים של יוני",
+            ],
+          },
+          announcement: [
+            "שמחים להזמין אתכם לחתונה",
+            "של ילדיהם ונכדיהם",
+          ],
+          names: {
+            noy: "נוי",
+            yoni: "יוני",
+            secondaryNoy: "Noy",
+            secondaryYoni: "Yoni",
+            separator: "ו",
+          },
+          invitationLine: "וישמחו לכבד אתכם בנוכחותכם ביום",
+          eventDate: "יום רביעי 01 ביולי 2026",
+          venueName: "שם האולם",
+          venueLocation: "בני דרום, אשדוד",
+          wazeLabel: "פתיחה ב-Waze",
+          wazeHref: "https://www.waze.com/ul?q=Bnei%20Darom%20Ashdod&navigate=yes",
+          schedule: [
+            "קבלת הפנים תחל בשעה 19:30",
+            "טקס החופה יתקיים בשעה 20:30",
+            "ולאחריו תתקיים קבלת הפנים",
+          ],
+          rsvp: {
+            kicker: "אישור הגעה",
+            title: "אישור הגעה",
+            subtitle: "נשמח אם תאשרו את הגעתכם ותשאירו לנו כמה מילים.",
+            lastName: "שם משפחה",
+            lastNamePlaceholder: "שם המשפחה שלכם",
+            firstName: "שם פרטי",
+            firstNamePlaceholder: "השם הפרטי שלכם",
+            attendance: "האם תהיו נוכחים בחופה?",
+            yes: "כן",
+            no: "לא",
+            guests: "מספר משתתפים",
+            guestsPlaceholder: "1",
+            message: "מילה לזוג הטרי",
+            messagePlaceholder: "כתבו כאן את הברכה שלכם...",
+            submit: "שליחה",
+            feedback: "תודה רבה, תשובתכם התקבלה בהצלחה.",
+            submitting: "השליחה מתבצעת...",
+            submitBusy: "שולח...",
+            error: "לא ניתן לשלוח את התשובה כרגע. נסו שוב בעוד רגע.",
+          },
+        },
+      };
+
+      function setFormSubmitting(isSubmitting) {
+        submitButton.disabled = isSubmitting;
+        inputLastName.disabled = isSubmitting;
+        inputFirstName.disabled = isSubmitting;
+        inputGuests.disabled = isSubmitting;
+        inputMessage.disabled = isSubmitting;
+        rsvpForm
+          .querySelectorAll('input[name="houppa"]')
+          .forEach((input) => (input.disabled = isSubmitting));
+
+        submitButton.textContent = isSubmitting
+          ? pageTranslations[currentLang].rsvp.submitBusy
+          : pageTranslations[currentLang].rsvp.submit;
+      }
+
+      async function submitRsvp() {
+        const houppaValue = rsvpForm.elements.houppa.value === "oui" ? "Oui" : "Non";
+        const guestsValue = Number.parseInt(inputGuests.value, 10);
+
+        const payload = {
+          lastName: inputLastName.value.trim(),
+          firstName: inputFirstName.value.trim(),
+          houppa: houppaValue,
+          guests: Number.isNaN(guestsValue) ? 1 : guestsValue,
+          message: inputMessage.value.trim(),
+        };
+
+        const response = await fetch("/api/rsvp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          let errorMessage = "RSVP request failed";
+
+          try {
+            const errorData = await response.json();
+            errorMessage = errorData.error || errorMessage;
+          } catch (error) {
+            errorMessage = "RSVP request failed";
+          }
+
+          throw new Error(errorMessage);
+        }
+      }
+
+      function updateIntroLanguage(lang) {
+        currentLang = lang;
+        const copy = introTranslations[lang];
+        countdownTitle.textContent = copy.title;
+        openInvitationButton.textContent = copy.open;
+        document.documentElement.lang = lang === "he" ? "he" : "fr";
+        document.body.classList.toggle("is-hebrew", lang === "he");
+
+        countdownLabels.forEach((label) => {
+          const unit = label.dataset.countdownLabel;
+          label.textContent = copy.labels[unit];
+        });
+
+        langButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.lang === lang);
+        });
+
+        const pageCopy = pageTranslations[lang];
+
+        familyColumns.noy.innerHTML = pageCopy.families.noy.map((line) => `<p>${line}</p>`).join("");
+        familyColumns.yoni.innerHTML = pageCopy.families.yoni.map((line) => `<p>${line}</p>`).join("");
+        announcementText.innerHTML = pageCopy.announcement.map((line) => `<p>${line}</p>`).join("");
+        firstNameNoy.textContent = pageCopy.names.noy;
+        firstNameYoni.textContent = pageCopy.names.yoni;
+        secondaryNameNoy.textContent = pageCopy.names.secondaryNoy;
+        secondaryNameYoni.textContent = pageCopy.names.secondaryYoni;
+        secondaryNameNoy.lang = lang === "he" ? "fr" : "he";
+        secondaryNameYoni.lang = lang === "he" ? "fr" : "he";
+        secondaryNameNoy.dir = lang === "he" ? "ltr" : "rtl";
+        secondaryNameYoni.dir = lang === "he" ? "ltr" : "rtl";
+        namesSeparator.textContent = pageCopy.names.separator;
+        invitationLine.textContent = pageCopy.invitationLine;
+        eventDate.textContent = pageCopy.eventDate;
+        venueName.textContent = pageCopy.venueName;
+        venueLocation.textContent = pageCopy.venueLocation;
+        wazeLink.textContent = pageCopy.wazeLabel;
+        wazeLink.href = pageCopy.wazeHref;
+        scheduleText.innerHTML = pageCopy.schedule.map((line) => `<p>${line}</p>`).join("");
+        rsvpKicker.textContent = pageCopy.rsvp.kicker;
+        rsvpTitle.textContent = pageCopy.rsvp.title;
+        rsvpSubtitle.textContent = pageCopy.rsvp.subtitle;
+        labelLastName.textContent = pageCopy.rsvp.lastName;
+        inputLastName.placeholder = pageCopy.rsvp.lastNamePlaceholder;
+        labelFirstName.textContent = pageCopy.rsvp.firstName;
+        inputFirstName.placeholder = pageCopy.rsvp.firstNamePlaceholder;
+        attendanceLegend.textContent = pageCopy.rsvp.attendance;
+        attendanceYes.textContent = pageCopy.rsvp.yes;
+        attendanceNo.textContent = pageCopy.rsvp.no;
+        labelGuests.textContent = pageCopy.rsvp.guests;
+        inputGuests.placeholder = pageCopy.rsvp.guestsPlaceholder;
+        labelMessage.textContent = pageCopy.rsvp.message;
+        inputMessage.placeholder = pageCopy.rsvp.messagePlaceholder;
+        submitButton.textContent = pageCopy.rsvp.submit;
+
+        if (feedback.textContent.trim()) {
+          feedback.textContent = pageCopy.rsvp.feedback;
+        }
+      }
+
+      function updateCountdown() {
+        const diff = Math.max(0, weddingDate.getTime() - Date.now());
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        countdownValues.days.textContent = String(days).padStart(2, "0");
+        countdownValues.hours.textContent = String(hours).padStart(2, "0");
+        countdownValues.minutes.textContent = String(minutes).padStart(2, "0");
+        countdownValues.seconds.textContent = String(seconds).padStart(2, "0");
+      }
+
+      function startRevealAnimations() {
+        if (revealStarted) return;
+        revealStarted = true;
+
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.16,
+            rootMargin: "0px 0px -8% 0px",
+          }
+        );
+
+        deferredRevealItems.forEach((item) => revealObserver.observe(item));
+      }
+
+      function revealCoverMonogram() {
+        if (coverMonogramRevealed) return;
+        coverMonogramRevealed = true;
+        coverMonogram?.classList.add("is-visible");
+      }
+
+      function focusFirstInvitationPage() {
+        window.scrollTo({ top: 0, behavior: "auto" });
+        firstInvitationPage?.scrollIntoView({ block: "start", behavior: "auto" });
+      }
+
+      function markUserNavigatedAway() {
+        if (window.scrollY > 40) {
+          keepIntroFocus = false;
+        }
+      }
+
+      updateIntroLanguage("fr");
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      langButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          updateIntroLanguage(button.dataset.lang);
+        });
+      });
+
+      rsvpForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const run = async () => {
+          try {
+            setFormSubmitting(true);
+            feedback.textContent = pageTranslations[currentLang].rsvp.submitting;
+            await submitRsvp();
+            feedback.textContent = pageTranslations[currentLang].rsvp.feedback;
+            rsvpForm.reset();
+          } catch (error) {
+            feedback.textContent = pageTranslations[currentLang].rsvp.error;
+          } finally {
+            setFormSubmitting(false);
+          }
+        };
+
+        run();
+      });
+
+      window.addEventListener("scroll", markUserNavigatedAway, { passive: true });
+
+      openInvitationButton.addEventListener("click", () => {
+        keepIntroFocus = true;
+        document.body.classList.remove("intro-active");
+        window.requestAnimationFrame(focusFirstInvitationPage);
+        introOverlay.classList.add("is-closing");
+        window.setTimeout(
+          revealCoverMonogram,
+          Math.max(0, introFadeDuration - coverMonogramLeadTime)
+        );
+        window.setTimeout(
+          startRevealAnimations,
+          Math.max(0, introCloseDuration - revealLeadTime)
+        );
+        window.setTimeout(() => {
+          introOverlay.hidden = true;
+          if (keepIntroFocus) {
+            focusFirstInvitationPage();
+          }
+          revealCoverMonogram();
+        }, introCloseDuration);
+      });
+    </script>
+  </body>
+</html>
