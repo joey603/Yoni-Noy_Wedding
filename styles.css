@@ -18,7 +18,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cinzel", serif;
   color: var(--text);
   background: var(--paper);
   overflow-x: hidden;
@@ -53,7 +53,7 @@ body.is-hebrew .first-name {
 }
 
 body.is-hebrew .hebrew-name {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cinzel", serif;
   font-size: clamp(1rem, 1.7vw, 1.45rem);
   letter-spacing: 0.08em;
   direction: ltr;
@@ -84,6 +84,10 @@ body.is-hebrew .details-card .monogram {
   margin: 0 auto;
   justify-self: center;
   align-self: center;
+}
+
+body.is-hebrew .names-row {
+  display: none;
 }
 
 [data-reveal] {
@@ -181,9 +185,24 @@ body.is-hebrew .details-card .monogram {
   padding: 24px;
   background: var(--paper);
   backdrop-filter: blur(6px);
+  font-family: "Cinzel", serif;
   transition:
     transform 4900ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 3500ms ease;
+}
+
+body.is-hebrew .intro-overlay {
+  font-family: "Assistant", sans-serif;
+  direction: rtl;
+}
+
+body.is-hebrew .intro-lang-switch {
+  direction: ltr;
+}
+
+body.is-hebrew .intro-overlay .countdown-value {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .intro-overlay.is-closing {
@@ -429,7 +448,7 @@ body.is-hebrew .details-card .monogram {
 }
 
 .monogram-letter {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cinzel", serif;
   font-size: 236px;
   font-weight: 100;
   line-height: 1;
@@ -485,9 +504,9 @@ body.is-hebrew .details-card .monogram {
 
 .first-name {
   margin: 0;
-  font-family: "Great Vibes", cursive;
+  font-family: "Cinzel", serif;
   font-size: clamp(4.4rem, 10vw, 7.2rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 0.92;
   color: #3e3a39;
 }
@@ -502,7 +521,7 @@ body.is-hebrew .details-card .monogram {
 
 .ampersand {
   align-self: center;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cinzel", serif;
   font-size: clamp(4.8rem, 8vw, 7rem);
   line-height: 0.9;
   color: var(--accent);
