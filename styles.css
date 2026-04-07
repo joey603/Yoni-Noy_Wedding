@@ -3,12 +3,12 @@
   --paper-deep: #f5efe7;
   --mist: rgba(217, 205, 191, 0.22);
   --mist-strong: rgba(210, 193, 174, 0.3);
-  --text: #4c4744;
-  --accent: #c89c7d;
-  --accent-deep: #b68767;
+  --text: #56401d;
+  --accent: #5e4620;
+  --accent-deep: #4d391a;
   --gold: rgba(182, 145, 87, 0.9);
-  --border: rgba(201, 162, 135, 0.16);
-  --shadow: rgba(145, 116, 96, 0.14);
+  --border: rgba(94, 70, 32, 0.16);
+  --shadow: rgba(94, 70, 32, 0.14);
 }
 
 * {
@@ -213,9 +213,9 @@ body.is-hebrew .details-card .monogram {
 }
 
 .lang-button {
-  border: 1px solid rgba(193, 149, 121, 0.34);
+  border: 1px solid rgba(94, 70, 32, 0.34);
   background: rgba(255, 255, 255, 0.62);
-  color: rgba(121, 87, 62, 0.92);
+  color: rgba(94, 70, 32, 0.92);
   min-width: 72px;
   padding: 10px 18px;
   border-radius: 999px;
@@ -237,8 +237,8 @@ body.is-hebrew .details-card .monogram {
 }
 
 .lang-button.is-active {
-  background: linear-gradient(180deg, rgba(213, 174, 146, 0.95) 0%, rgba(200, 156, 125, 0.95) 100%);
-  border-color: rgba(193, 149, 121, 0.9);
+  background: linear-gradient(180deg, rgba(94, 70, 32, 0.95) 0%, rgba(77, 57, 26, 0.95) 100%);
+  border-color: rgba(94, 70, 32, 0.9);
   color: #fffdfb;
   box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
 }
@@ -289,7 +289,7 @@ body.is-hebrew .details-card .monogram {
 .countdown-value {
   font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 0.92;
-  color: rgba(121, 87, 62, 0.96);
+  color: rgba(94, 70, 32, 0.96);
 }
 
 .countdown-label {
@@ -301,7 +301,7 @@ body.is-hebrew .details-card .monogram {
 
 .intro-open-button {
   border: 0;
-  background: linear-gradient(180deg, #d5ae92 0%, #c89c7d 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: white;
   font: inherit;
   font-size: clamp(1.22rem, 1.6vw, 1.4rem);
@@ -547,7 +547,7 @@ body.is-hebrew .details-card .monogram {
   font-size: 1.15rem;
   line-height: 1;
   color: #fffdfb;
-  background: linear-gradient(180deg, #d5ae92 0%, #c89c7d 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
@@ -689,9 +689,9 @@ body.is-hebrew .details-card .monogram {
 }
 
 .choice-pill input:checked + span {
-  background: rgba(200, 156, 125, 0.16);
-  border-color: rgba(193, 149, 121, 0.82);
-  color: #8f664c;
+  background: rgba(94, 70, 32, 0.12);
+  border-color: rgba(94, 70, 32, 0.82);
+  color: var(--accent);
 }
 
 .field-small {
@@ -709,7 +709,7 @@ body.is-hebrew .details-card .monogram {
 
 .submit-button {
   border: 0;
-  background: linear-gradient(180deg, #d5ae92 0%, #c89c7d 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: white;
   font: inherit;
   font-size: 1.3rem;
@@ -738,7 +738,7 @@ body.is-hebrew .details-card .monogram {
   min-height: 1.4em;
   margin: 0;
   font-size: 1.2rem;
-  color: #8f664c;
+  color: var(--accent);
   text-align: center;
 }
 
