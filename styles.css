@@ -46,6 +46,15 @@ body.is-hebrew .form-feedback {
   font-family: "Assistant", sans-serif;
 }
 
+body.is-hebrew .rsvp-kicker {
+  font-weight: 400;
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+body.is-hebrew .rsvp-title {
+  display: none;
+}
+
 body.is-hebrew .first-name {
   font-family: "Assistant", sans-serif;
   font-size: clamp(3.8rem, 8vw, 6rem);
