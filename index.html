@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Noto+Serif+Hebrew:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Noto+Serif+Hebrew:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -21,16 +21,7 @@
         </div>
 
         <div class="intro-monogram monogram" aria-label="Monogramme Noy et Yoni">
-          <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
-            <defs>
-              <mask id="monogram-n-cut-intro">
-                <rect width="240" height="320" fill="white"></rect>
-                <rect x="148" y="30" width="52" height="248" fill="black"></rect>
-              </mask>
-            </defs>
-            <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-intro)">N</text>
-            <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
-          </svg>
+          <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
         </div>
 
         <div class="intro-countdown-wrapper">
@@ -70,16 +61,7 @@
           aria-label="Monogramme Noy et Yoni"
           data-reveal="up"
         >
-          <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
-            <defs>
-              <mask id="monogram-n-cut-cover">
-                <rect width="240" height="320" fill="white"></rect>
-                <rect x="148" y="30" width="52" height="248" fill="black"></rect>
-              </mask>
-            </defs>
-            <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-cover)">N</text>
-            <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
-          </svg>
+          <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
         </div>
       </section>
 
@@ -92,16 +74,7 @@
           </div>
 
           <div class="monogram" aria-label="Monogramme Noy et Yoni" data-reveal="up">
-            <svg viewBox="0 0 240 320" role="img" aria-hidden="true">
-              <defs>
-                <mask id="monogram-n-cut-details">
-                  <rect width="240" height="320" fill="white"></rect>
-                  <rect x="148" y="30" width="52" height="248" fill="black"></rect>
-                </mask>
-              </defs>
-              <text class="monogram-letter monogram-letter-n" x="44" y="250" mask="url(#monogram-n-cut-details)">N</text>
-              <text class="monogram-letter monogram-letter-y" x="112" y="250">Y</text>
-            </svg>
+            <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
           </div>
 
           <div class="family-column" data-family-column="yoni" data-reveal="right">
@@ -135,7 +108,7 @@
         </p>
 
         <div class="date-block" data-reveal="up">
-          <p class="date" id="event-date">Mercredi 01 Juillet 2026</p>
+          <p class="date" id="event-date">Lundi 07 Septembre 2026</p>
           <p class="venue venue-emphasis" id="venue-name">Nom de la salle</p>
           <p class="venue" id="venue-location">lieux de la salle</p>
           <a
@@ -284,7 +257,7 @@
         (item) => item !== coverMonogram
       );
       const firstInvitationPage = document.querySelector("main.page .invitation-card");
-      const weddingDate = new Date("2026-07-01T20:30:00");
+      const weddingDate = new Date("2026-09-07T20:30:00");
       const introCloseDuration = 3900;
       const introFadeDuration = 3500;
       const revealLeadTime = 2000;
@@ -320,16 +293,8 @@
       const pageTranslations = {
         fr: {
           families: {
-            noy: [
-              "Mr & Mme grand parent maternel Noy",
-              "Mr & Mme grand parent paternel Noy",
-              "Mr & Mme parent Noy",
-            ],
-            yoni: [
-              "Mr & Mme grand parent maternel Yoni",
-              "Mr & Mme grand parent paternel Yoni",
-              "Mr & Mme parent Yoni",
-            ],
+            noy: ["Yohan et Veronique Assouline"],
+            yoni: ["Yoseph et Tsipora Avidan"],
           },
           announcement: [
             "Ont la joie de vous faire part du mariage",
@@ -343,7 +308,7 @@
             separator: "&",
           },
           invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
-          eventDate: "Mercredi 01 Juillet 2026",
+          eventDate: "Lundi 07 Septembre 2026",
           venueName: "Nom de la salle",
           venueLocation: "lieux de la salle",
           wazeLabel: "Ouvrir dans Waze",
@@ -377,16 +342,8 @@
         },
         he: {
           families: {
-            noy: [
-              "מר וגברת הסבים מצד האם של נוי",
-              "מר וגברת הסבים מצד האב של נוי",
-              "מר וגברת ההורים של נוי",
-            ],
-            yoni: [
-              "מר וגברת הסבים מצד האם של יוני",
-              "מר וגברת הסבים מצד האב של יוני",
-              "מר וגברת ההורים של יוני",
-            ],
+            noy: ["יוהן וורוניק אסולין"],
+            yoni: ["יוסף וציפורה אבידן"],
           },
           announcement: [
             "שמחים להזמין אתכם לחתונה",
@@ -400,7 +357,7 @@
             separator: "ו",
           },
           invitationLine: "וישמחו לכבד אתכם בנוכחותכם ביום",
-          eventDate: "יום רביעי 01 ביולי 2026",
+          eventDate: "יום שני 07 בספטמבר 2026",
           venueName: "שם האולם",
           venueLocation: "בני דרום, אשדוד",
           wazeLabel: "פתיחה ב-Waze",
