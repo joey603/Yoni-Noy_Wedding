@@ -200,6 +200,10 @@ body.is-hebrew .intro-lang-switch {
   direction: ltr;
 }
 
+body.is-hebrew .intro-overlay .lang-button {
+  font-family: "Cinzel", serif;
+}
+
 body.is-hebrew .intro-overlay .countdown-value {
   direction: ltr;
   unicode-bidi: isolate;
@@ -636,6 +640,15 @@ body.is-hebrew .intro-overlay .countdown-value {
   padding: 0;
 }
 
+.field-group.attendance-group {
+  gap: 34px;
+}
+
+.attendance-group > legend {
+  margin-bottom: 18px;
+  padding: 0;
+}
+
 .field-group > span,
 .field-group > legend {
   width: 100%;
@@ -678,6 +691,7 @@ body.is-hebrew .intro-overlay .countdown-value {
 
 .attendance-options {
   display: flex;
+  margin-top: 4px;
   gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
@@ -1132,6 +1146,14 @@ body.is-hebrew .intro-overlay .countdown-value {
     gap: 14px;
   }
 
+  .field-group.attendance-group {
+    gap: 36px;
+  }
+
+  .attendance-group > legend {
+    margin-bottom: 20px;
+  }
+
   .field-group > span,
   .field-group > legend {
     font-size: 1.3rem;
@@ -1144,6 +1166,7 @@ body.is-hebrew .intro-overlay .countdown-value {
   }
 
   .attendance-options {
+    margin-top: 6px;
     gap: 16px;
     justify-content: center;
   }
@@ -1213,12 +1236,21 @@ body.is-hebrew .intro-overlay .countdown-value {
     gap: 12px;
   }
 
+  .field-group.attendance-group {
+    gap: 30px;
+  }
+
+  .attendance-group > legend {
+    margin-bottom: 18px;
+  }
+
   .field-group input,
   .field-group textarea {
     padding: 16px 17px;
   }
 
   .attendance-options {
+    margin-top: 4px;
     gap: 14px;
   }
 
