@@ -289,7 +289,7 @@
           },
         },
         he: {
-          title: "הספירה לאחור עד החתונה",
+          title: "הספירה לאחור ",
           open: "להמשך",
           labels: {
             days: "ימים",
@@ -351,8 +351,8 @@
         },
         he: {
           families: {
-            noy: ["יוסף וציפורה אבידן"],
-            yoni: ["יוהן וורוניק אסולין"],
+            noy: ["יוסף וציפורה", "אבידן"],
+            yoni: ["יוהן וורוניק", "אסולין"],
           },
           announcement: ["שמחים להזמינכם לחתונה של"],
           names: {
@@ -365,8 +365,8 @@
           coupleNamesLine: "יוני ונוי",
           invitationLine: "שתתקיים ביום שני",
           eventDate: "7 בספטמבר 2026",
-          venueName: "במלון לוגוס",
-          venueLocation: "יד השמונה",
+          venueName: "במלון לוגוס, יד השמונה",
+          venueLocation: "",
           wazeLabel: "פתיחה ב-Waze",
           wazeHref:
             "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
@@ -464,8 +464,15 @@
 
         const pageCopy = pageTranslations[lang];
 
-        familyColumns.noy.innerHTML = pageCopy.families.noy.map((line) => `<p>${line}</p>`).join("");
-        familyColumns.yoni.innerHTML = pageCopy.families.yoni.map((line) => `<p>${line}</p>`).join("");
+        if (lang === "he") {
+          const heFamily = (pair) =>
+            `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
+          familyColumns.noy.innerHTML = heFamily(pageCopy.families.noy);
+          familyColumns.yoni.innerHTML = heFamily(pageCopy.families.yoni);
+        } else {
+          familyColumns.noy.innerHTML = pageCopy.families.noy.map((line) => `<p>${line}</p>`).join("");
+          familyColumns.yoni.innerHTML = pageCopy.families.yoni.map((line) => `<p>${line}</p>`).join("");
+        }
         announcementText.innerHTML = pageCopy.announcement.map((line) => `<p>${line}</p>`).join("");
         firstNameNoy.textContent = pageCopy.names.noy;
         firstNameYoni.textContent = pageCopy.names.yoni;
