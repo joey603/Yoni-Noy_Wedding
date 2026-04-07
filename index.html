@@ -91,16 +91,26 @@
         <div class="names-row" data-reveal="up">
           <div class="person" data-reveal="left">
             <h1 class="first-name" id="first-name-noy">Noy</h1>
-            <p class="hebrew-name" id="secondary-name-noy" lang="he" dir="rtl">נוי</p>
+            <p class="hebrew-name" id="secondary-name-noy" lang="he" dir="rtl"></p>
           </div>
 
           <div class="ampersand" id="names-separator">&amp;</div>
 
           <div class="person" data-reveal="right">
             <h1 class="first-name" id="first-name-yoni">Yoni</h1>
-            <p class="hebrew-name" id="secondary-name-yoni" lang="he" dir="rtl">יוני</p>
+            <p class="hebrew-name" id="secondary-name-yoni" lang="he" dir="rtl"></p>
           </div>
         </div>
+
+        <p
+          class="hebrew-couple-names"
+          id="hebrew-couple-names"
+          data-reveal="up"
+          lang="he"
+          dir="rtl"
+        >
+          יוני ונוי
+        </p>
 
         <p class="invitation-line" id="invitation-line" data-reveal="left">
           Et vous prient de bien vouloir les honorer de votre presence le
@@ -230,6 +240,7 @@
       const secondaryNameYoni = document.getElementById("secondary-name-yoni");
       const namesSeparator = document.getElementById("names-separator");
       const invitationLine = document.getElementById("invitation-line");
+      const hebrewCoupleNames = document.getElementById("hebrew-couple-names");
       const eventDate = document.getElementById("event-date");
       const venueName = document.getElementById("venue-name");
       const venueLocation = document.getElementById("venue-location");
@@ -278,7 +289,7 @@
           },
         },
         he: {
-          title: "ספירה לאחור עד החתונה",
+          title: "הספירה לאחור עד החתונה",
           open: "להמשך",
           labels: {
             days: "ימים",
@@ -299,10 +310,11 @@
           names: {
             noy: "Noy",
             yoni: "Yoni",
-            secondaryNoy: "נוי",
-            secondaryYoni: "יוני",
+            secondaryNoy: "",
+            secondaryYoni: "",
             separator: "&",
           },
+          coupleNamesLine: "",
           invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
           eventDate: "Lundi 07 Septembre 2026",
           venueName: "Hôtel Logos",
@@ -342,7 +354,7 @@
             noy: ["יוסף וציפורה אבידן"],
             yoni: ["יוהן וורוניק אסולין"],
           },
-          announcement: ["שמחים להזמינכם לחתונה של יוני ונוי"],
+          announcement: ["שמחים להזמינכם לחתונה של"],
           names: {
             noy: "נוי",
             yoni: "יוני",
@@ -350,6 +362,7 @@
             secondaryYoni: "",
             separator: "ו",
           },
+          coupleNamesLine: "יוני ונוי",
           invitationLine: "שתתקיים ביום שני",
           eventDate: "7 בספטמבר 2026",
           venueName: "במלון לוגוס",
@@ -357,11 +370,7 @@
           wazeLabel: "פתיחה ב-Waze",
           wazeHref:
             "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
-          schedule: [
-            "קבלת הפנים תחל בשעה 19:30",
-            "טקס החופה יתקיים בשעה 20:30",
-            "ולאחריו תתקיים קבלת הפנים",
-          ],
+          schedule: ["קבלת הפנים תחל בשעה 18:00", "טקס החופה יתקיים בשעה 20:30"],
           rsvp: {
             kicker: "אישור הגעה",
             title: "אישור הגעה",
@@ -375,7 +384,8 @@
             no: "לא",
             guests: "מספר משתתפים",
             guestsPlaceholder: "1",
-            message: "מילה לזוג הטרי",
+            messageLabelHtml:
+              'נשמח אם תאשרו את הגעתכם ותשאירו לנו כמה מילים<span class="message-label-heart" aria-hidden="true">\u2665</span>',
             messagePlaceholder: "כתבו כאן את הברכה שלכם...",
             submit: "שליחה",
             feedback: "תודה רבה, תשובתכם התקבלה בהצלחה.",
@@ -466,6 +476,9 @@
         secondaryNameNoy.dir = lang === "he" ? "ltr" : "rtl";
         secondaryNameYoni.dir = lang === "he" ? "ltr" : "rtl";
         namesSeparator.textContent = pageCopy.names.separator;
+        if (hebrewCoupleNames) {
+          hebrewCoupleNames.textContent = pageCopy.coupleNamesLine || "";
+        }
         invitationLine.textContent = pageCopy.invitationLine;
         eventDate.textContent = pageCopy.eventDate;
         venueName.textContent = pageCopy.venueName;
@@ -485,7 +498,11 @@
         attendanceNo.textContent = pageCopy.rsvp.no;
         labelGuests.textContent = pageCopy.rsvp.guests;
         inputGuests.placeholder = pageCopy.rsvp.guestsPlaceholder;
-        labelMessage.textContent = pageCopy.rsvp.message;
+        if (pageCopy.rsvp.messageLabelHtml) {
+          labelMessage.innerHTML = pageCopy.rsvp.messageLabelHtml;
+        } else {
+          labelMessage.textContent = pageCopy.rsvp.message;
+        }
         inputMessage.placeholder = pageCopy.rsvp.messagePlaceholder;
         submitButton.textContent = pageCopy.rsvp.submit;
 

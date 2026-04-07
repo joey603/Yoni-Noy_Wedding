@@ -59,10 +59,6 @@ body.is-hebrew .hebrew-name {
   direction: ltr;
 }
 
-body.is-hebrew .hebrew-name:empty {
-  display: none;
-}
-
 body.is-hebrew .field-group input,
 body.is-hebrew .field-group textarea {
   direction: rtl;
@@ -88,6 +84,37 @@ body.is-hebrew .details-card .monogram {
 
 body.is-hebrew .names-row {
   display: none;
+}
+
+.hebrew-couple-names {
+  display: none;
+  margin: 0 auto clamp(18px, 3.5vw, 36px);
+  max-width: 760px;
+  text-align: center;
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 2.05rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: normal;
+  color: #3e3a39;
+}
+
+body.is-hebrew .hebrew-couple-names {
+  display: block;
+}
+
+body.is-hebrew .hebrew-couple-names[data-reveal] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0);
+}
+
+body.is-hebrew .venue.venue-emphasis {
+  font-style: normal;
+}
+
+body.is-hebrew .date {
+  font-style: normal;
 }
 
 [data-reveal] {
@@ -523,12 +550,16 @@ body.is-hebrew .intro-overlay .countdown-value {
   line-height: 1;
 }
 
+.hebrew-name:empty {
+  display: none;
+}
+
 .ampersand {
   align-self: center;
   font-family: "Cinzel", serif;
   font-size: clamp(4.8rem, 8vw, 7rem);
   line-height: 0.9;
-  color: var(--accent);
+  color: #000000;
 }
 
 .invitation-line {
@@ -606,7 +637,7 @@ body.is-hebrew .intro-overlay .countdown-value {
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(193, 149, 121, 0.9);
+  color: var(--accent-deep);
 }
 
 .rsvp-title {
@@ -656,6 +687,15 @@ body.is-hebrew .intro-overlay .countdown-value {
   line-height: 1.1;
   color: #4c4744;
   text-align: center;
+}
+
+.message-label-heart {
+  display: inline-block;
+  margin-inline-start: 0.1em;
+  color: var(--accent-deep);
+  font-size: 1.08em;
+  line-height: 1;
+  vertical-align: -0.04em;
 }
 
 .field-group input,
