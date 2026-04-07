@@ -374,7 +374,7 @@
           rsvp: {
             kicker: "אישור הגעה",
             title: "",
-            subtitle: "נשמח אם תאשרו את הגעתכם ותשאירו לנו כמה מילים.",
+            subtitle: "",
             lastName: "שם משפחה",
             lastNamePlaceholder: "שם המשפחה שלכם",
             firstName: "שם פרטי",
@@ -385,7 +385,7 @@
             guests: "מספר משתתפים",
             guestsPlaceholder: "1",
             messageLabelHtml:
-              'נשמח אם תאשרו את הגעתכם<br />ותשאירו לנו כמה מילים<span class="message-label-heart" aria-hidden="true">\u2665</span>',
+              '<span class="he-subtitle-split"><span class="he-subtitle-split__line">נשמח אם תאשרו את הגעתכם</span><span class="he-subtitle-split__line">ותשאירו לנו כמה מילים<span class="message-label-heart" aria-hidden="true">\u2665</span></span></span>',
             messagePlaceholder: "כתבו כאן את הברכה שלכם...",
             submit: "שליחה",
             feedback: "תודה רבה, תשובתכם התקבלה בהצלחה.",
@@ -495,7 +495,11 @@
         scheduleText.innerHTML = pageCopy.schedule.map((line) => `<p>${line}</p>`).join("");
         rsvpKicker.textContent = pageCopy.rsvp.kicker;
         rsvpTitle.textContent = pageCopy.rsvp.title;
-        rsvpSubtitle.textContent = pageCopy.rsvp.subtitle;
+        if (pageCopy.rsvp.subtitleHtml) {
+          rsvpSubtitle.innerHTML = pageCopy.rsvp.subtitleHtml;
+        } else {
+          rsvpSubtitle.textContent = pageCopy.rsvp.subtitle ?? "";
+        }
         labelLastName.textContent = pageCopy.rsvp.lastName;
         inputLastName.placeholder = pageCopy.rsvp.lastNamePlaceholder;
         labelFirstName.textContent = pageCopy.rsvp.firstName;
