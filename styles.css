@@ -253,7 +253,6 @@ body.is-hebrew .date {
 }
 
 body.is-hebrew .intro-overlay {
-  font-family: "Assistant", sans-serif;
   direction: rtl;
 }
 
@@ -261,13 +260,15 @@ body.is-hebrew .intro-lang-switch {
   direction: ltr;
 }
 
-body.is-hebrew .intro-overlay .lang-button {
-  font-family: "Cinzel", serif;
-}
-
 body.is-hebrew .intro-overlay .countdown-value {
   direction: ltr;
   unicode-bidi: isolate;
+}
+
+body.is-hebrew .intro-overlay .intro-countdown-title,
+body.is-hebrew .intro-overlay .countdown-label,
+body.is-hebrew .intro-overlay .countdown-value {
+  font-family: "Cinzel", serif;
 }
 
 .intro-overlay.is-closing {
