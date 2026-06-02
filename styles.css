@@ -1,32 +1,18 @@
 :root {
-  --paper: #ffffff;
-  --paper-deep: #faf6fb;
-  --mist: rgba(210, 175, 220, 0.24);
-  --mist-strong: rgba(200, 155, 210, 0.32);
-  --text: #4a2d4a;
-  --accent: #a856a0;
-  --accent-deep: #6d3a68;
-  --gold: rgba(200, 130, 185, 0.92);
-  --border: rgba(105, 48, 98, 0.18);
-  --shadow: rgba(90, 40, 88, 0.14);
-  /* Même dégradé que « Ouvrir l'invitation » et les autres boutons violets */
-  --cta-gradient: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
-  --name-gradient: var(--cta-gradient);
-  --monogram-orange: #e87828;
-  --monogram-orange-light: #f6a347;
-  --monogram-orange-dark: #cf6218;
-  --monogram-black: #181818;
-  --monogram-black-light: #444444;
-  --page-bg-color: #f7f2ed;
-  --page-bg-image: url("assets/watercolor-lavender-gold-bg-v2.png");
+  --paper: #fcfaf7;
+  --paper-deep: #f5efe7;
+  --mist: rgba(217, 205, 191, 0.22);
+  --mist-strong: rgba(210, 193, 174, 0.3);
+  --text: #56401d;
+  --accent: #5e4620;
+  --accent-deep: #4d391a;
+  --gold: rgba(182, 145, 87, 0.9);
+  --border: rgba(94, 70, 32, 0.16);
+  --shadow: rgba(94, 70, 32, 0.14);
 }
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  background: var(--page-bg-color);
 }
 
 body {
@@ -34,18 +20,11 @@ body {
   min-height: 100vh;
   font-family: "Cinzel", serif;
   color: var(--text);
-  background: var(--page-bg-color);
+  background: var(--paper);
   overflow-x: hidden;
 }
 
 body.intro-active {
-  overflow: hidden;
-}
-
-.monogram-ae-sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
   overflow: hidden;
 }
 
@@ -149,11 +128,7 @@ body.is-hebrew .announcement {
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: 0.03em;
-  background: var(--name-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #3e3a39;
 }
 
 body.is-hebrew .invitation-line {
@@ -210,7 +185,7 @@ body.is-hebrew .date {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(8px, 2vw, 22px);
+  gap: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
@@ -219,7 +194,26 @@ body.is-hebrew .date {
 
 .page::before,
 .page::after {
-  content: none;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.page::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(100%, 1220px);
+  transform: translateX(-50%);
+  background: url("./assets/new-card-background.png") center top / 100% 100% no-repeat;
+  opacity: 1;
+  z-index: 0;
+}
+
+.page::after {
+  inset: 0;
+  background: none;
+  opacity: 0;
 }
 
 .invitation-card {
@@ -242,16 +236,6 @@ body.is-hebrew .date {
   padding: clamp(24px, 4vw, 40px);
 }
 
-.intro-overlay,
-main > .invitation-card.cover-card,
-.invitation-card.rsvp-card {
-  background-color: var(--page-bg-color);
-  background-image: var(--page-bg-image);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -260,6 +244,8 @@ main > .invitation-card.cover-card,
   align-items: center;
   justify-content: center;
   padding: 24px;
+  background: var(--paper);
+  backdrop-filter: blur(6px);
   font-family: "Cinzel", serif;
   transition:
     transform 4900ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -297,7 +283,11 @@ body.is-hebrew .intro-overlay .countdown-value {
   justify-content: center;
   gap: clamp(28px, 4vw, 40px);
   padding: clamp(28px, 4.5vw, 54px) clamp(22px, 6vw, 82px);
-  background: transparent;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.16)),
+    url("./assets/new-card-background.png");
+  background-size: 100% 100%;
+  background-position: center top;
 }
 
 .intro-lang-switch {
@@ -308,9 +298,9 @@ body.is-hebrew .intro-overlay .countdown-value {
 }
 
 .lang-button {
-  border: 1px solid rgba(105, 48, 98, 0.34);
+  border: 1px solid rgba(94, 70, 32, 0.34);
   background: rgba(255, 255, 255, 0.62);
-  color: rgba(105, 48, 98, 0.92);
+  color: rgba(94, 70, 32, 0.92);
   min-width: 72px;
   padding: 10px 18px;
   border-radius: 999px;
@@ -328,20 +318,19 @@ body.is-hebrew .intro-overlay .countdown-value {
 
 .lang-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(165, 110, 155, 0.1);
+  box-shadow: 0 10px 24px rgba(145, 116, 96, 0.1);
 }
 
 .lang-button.is-active {
-  background: linear-gradient(180deg, rgba(105, 48, 98, 0.95) 0%, rgba(72, 35, 78, 0.95) 100%);
-  border-color: rgba(105, 48, 98, 0.9);
-  color: #fffafc;
-  box-shadow: 0 14px 30px rgba(165, 110, 155, 0.14);
+  background: linear-gradient(180deg, rgba(94, 70, 32, 0.95) 0%, rgba(77, 57, 26, 0.95) 100%);
+  border-color: rgba(94, 70, 32, 0.9);
+  color: #fffdfb;
+  box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
 }
 
 .intro-monogram {
-  width: clamp(152px, 42vw, 260px);
-  aspect-ratio: 690 / 721;
-  height: auto;
+  width: clamp(240px, 30vw, 400px);
+  height: clamp(350px, 42vw, 540px);
   transform: none;
 }
 
@@ -378,14 +367,14 @@ body.is-hebrew .intro-overlay .countdown-value {
   min-height: 128px;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.58);
-  border: 1px solid rgba(210, 170, 200, 0.16);
-  box-shadow: 0 14px 34px rgba(165, 110, 155, 0.09);
+  border: 1px solid rgba(201, 162, 135, 0.16);
+  box-shadow: 0 14px 34px rgba(145, 116, 96, 0.09);
 }
 
 .countdown-value {
   font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 0.92;
-  color: rgba(105, 48, 98, 0.96);
+  color: rgba(94, 70, 32, 0.96);
 }
 
 .countdown-label {
@@ -397,42 +386,31 @@ body.is-hebrew .intro-overlay .countdown-value {
 
 .intro-open-button {
   border: 0;
-  background: var(--cta-gradient);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: white;
   font: inherit;
   font-size: clamp(1.22rem, 1.6vw, 1.4rem);
   padding: 18px 44px;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 16px 34px rgba(165, 110, 155, 0.16);
+  box-shadow: 0 16px 34px rgba(145, 116, 96, 0.16);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .intro-open-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 20px 40px rgba(165, 110, 155, 0.2);
+  box-shadow: 0 20px 40px rgba(145, 116, 96, 0.2);
   filter: brightness(1.02);
 }
 
-.invitation-card.details-card {
+.details-card {
   justify-content: space-between;
-  background-color: var(--page-bg-color);
-  background-image: none;
-}
-
-.invitation-card.details-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: var(--page-bg-image) center / cover no-repeat;
 }
 
 .cover-monogram.monogram {
-  width: min(clamp(180px, 48vw, 320px), 78vw);
-  aspect-ratio: 690 / 721;
-  height: auto;
+  width: min(clamp(280px, 34vw, 460px), 58vw);
+  height: min(clamp(420px, 52vw, 680px), 54vh);
+  color: rgba(193, 149, 121, 0.92);
   margin: 0 auto;
   align-self: center;
   transform: none;
@@ -450,10 +428,23 @@ body.is-hebrew .intro-overlay .countdown-value {
     filter 3000ms ease;
 }
 
-/* Pas de pseudo-éléments plein écran : ils masquaient le fond sur certains navigateurs */
 .invitation-card::before,
 .invitation-card::after {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.invitation-card::before {
+  background: none;
+  opacity: 0;
+}
+
+.invitation-card::after {
+  background: none;
+  mix-blend-mode: normal;
+  opacity: 0;
 }
 
 .invitation-card > * {
@@ -497,11 +488,11 @@ body.is-hebrew .intro-overlay .countdown-value {
 
 .monogram {
   position: relative;
-  width: clamp(72px, 16vw, 112px);
-  aspect-ratio: 690 / 721;
-  height: auto;
+  width: clamp(84px, 11vw, 140px);
+  height: clamp(140px, 17vw, 210px);
+  color: rgba(193, 149, 121, 0.88);
   justify-self: center;
-  transform: translateX(0);
+  transform: translateX(4%);
 }
 
 .monogram svg {
@@ -515,28 +506,11 @@ body.is-hebrew .intro-overlay .countdown-value {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  object-fit: contain;
+  object-position: center;
   image-rendering: -webkit-optimize-contrast;
   filter: contrast(1.04);
   backface-visibility: hidden;
-}
-
-svg.monogram-aa-svg {
-  filter: none;
-}
-
-img.monogram-image {
-  object-fit: contain;
-  object-position: center;
-}
-
-img.monogram-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  filter: none;
-  image-rendering: auto;
 }
 
 .monogram-letter {
@@ -544,11 +518,15 @@ img.monogram-logo-img {
   font-size: 236px;
   font-weight: 100;
   line-height: 1;
-  letter-spacing: 0.01em;
   fill: currentColor;
   transform-box: fill-box;
   transform-origin: center;
   transform: scaleX(0.84);
+}
+
+.monogram-letter-n,
+.monogram-letter-y {
+  letter-spacing: 0.01em;
 }
 
 .announcement,
@@ -596,11 +574,7 @@ img.monogram-logo-img {
   font-size: clamp(4.4rem, 10vw, 7.2rem);
   font-weight: 500;
   line-height: 0.92;
-  background: var(--name-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #3e3a39;
 }
 
 .hebrew-name {
@@ -620,22 +594,7 @@ img.monogram-logo-img {
   font-family: "Cinzel", serif;
   font-size: clamp(4.8rem, 8vw, 7rem);
   line-height: 0.9;
-  background: var(--name-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-@supports not (background-clip: text) {
-  .first-name,
-  .ampersand,
-  .rsvp-title,
-  .hebrew-couple-names {
-    background: none;
-    color: var(--accent-deep);
-    -webkit-text-fill-color: unset;
-  }
+  color: #3e3a39;
 }
 
 .invitation-line {
@@ -676,15 +635,15 @@ img.monogram-logo-img {
   text-decoration: none;
   font-size: 1.15rem;
   line-height: 1;
-  color: #fffafc;
-  background: var(--cta-gradient);
-  box-shadow: 0 14px 30px rgba(165, 110, 155, 0.14);
+  color: #fffdfb;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+  box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .waze-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 36px rgba(165, 110, 155, 0.18);
+  box-shadow: 0 18px 36px rgba(145, 116, 96, 0.18);
   filter: brightness(1.02);
 }
 
@@ -698,12 +657,9 @@ img.monogram-logo-img {
   margin-top: 8px;
 }
 
-.invitation-card.rsvp-card {
-  justify-content: flex-start;
+.rsvp-card {
+  justify-content: center;
   gap: 34px;
-  min-height: auto;
-  padding-bottom: clamp(40px, 7vh, 64px);
-  scroll-snap-stop: always;
 }
 
 .rsvp-header {
@@ -716,25 +672,20 @@ img.monogram-logo-img {
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .rsvp-title {
   margin: 0 0 14px;
   font-size: clamp(3.2rem, 6vw, 4.8rem);
   font-weight: 500;
-  background: var(--name-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #3e3a39;
 }
 
 .rsvp-subtitle {
   margin: 0;
   font-size: clamp(1.25rem, 2vw, 1.8rem);
   line-height: 1.22;
-  color: rgba(105, 48, 98, 0.92);
 }
 
 body.is-hebrew .he-subtitle-split {
@@ -781,7 +732,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   width: 100%;
   font-size: 1.4rem;
   line-height: 1.1;
-  color: var(--text);
+  color: #4c4744;
   text-align: center;
 }
 
@@ -797,9 +748,9 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 .field-group input,
 .field-group textarea {
   width: 100%;
-  border: 1px solid rgba(210, 170, 200, 0.32);
+  border: 1px solid rgba(201, 162, 135, 0.32);
   background: rgba(255, 255, 255, 0.72);
-  color: var(--text);
+  color: #3e3a39;
   font: inherit;
   font-size: 1.25rem;
   line-height: 1.2;
@@ -812,8 +763,8 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
 .field-group input:focus,
 .field-group textarea:focus {
-  border-color: rgba(195, 120, 175, 0.72);
-  box-shadow: 0 0 0 4px rgba(195, 120, 175, 0.12);
+  border-color: rgba(193, 149, 121, 0.72);
+  box-shadow: 0 0 0 4px rgba(193, 149, 121, 0.12);
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -849,18 +800,17 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   justify-content: center;
   min-width: 110px;
   padding: 14px 24px;
-  border: 1px solid rgba(210, 170, 200, 0.34);
+  border: 1px solid rgba(201, 162, 135, 0.34);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.68);
-  color: var(--text);
   font-size: 1.22rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .choice-pill input:checked + span {
-  background: rgba(105, 48, 98, 0.12);
-  border-color: rgba(105, 48, 98, 0.82);
+  background: rgba(94, 70, 32, 0.12);
+  border-color: rgba(94, 70, 32, 0.82);
   color: var(--accent);
 }
 
@@ -879,20 +829,20 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
 .submit-button {
   border: 0;
-  background: var(--cta-gradient);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: white;
   font: inherit;
   font-size: 1.3rem;
   padding: 16px 40px;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 14px 30px rgba(165, 110, 155, 0.14);
+  box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .submit-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 36px rgba(165, 110, 155, 0.18);
+  box-shadow: 0 18px 36px rgba(145, 116, 96, 0.18);
   filter: brightness(1.02);
 }
 
@@ -900,7 +850,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   cursor: wait;
   opacity: 0.78;
   transform: none;
-  box-shadow: 0 10px 24px rgba(165, 110, 155, 0.12);
+  box-shadow: 0 10px 24px rgba(145, 116, 96, 0.12);
   filter: none;
 }
 
@@ -933,12 +883,12 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
 @media (min-width: 721px) and (max-width: 1100px) {
   .page {
-    gap: clamp(8px, 2vw, 22px);
-    padding: 0 0 clamp(28px, 7vh, 80px);
+    gap: 24px;
+    padding: 18px;
   }
 
   .invitation-card {
-    min-height: 100vh;
+    min-height: calc(100vh - 36px);
     padding: 44px 42px 50px;
   }
 
@@ -1017,8 +967,8 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
 @media (min-width: 721px) and (max-width: 950px) and (max-height: 520px) {
   .page {
-    gap: clamp(6px, 1.5vw, 18px);
-    padding: 0 0 clamp(24px, 6vh, 64px);
+    gap: 18px;
+    padding: 12px;
   }
 
   .invitation-card {
@@ -1027,7 +977,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .cover-card {
-    min-height: 100vh;
+    min-height: calc(100vh - 24px);
   }
 
   .details-card {
@@ -1100,27 +1050,17 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 @media (max-width: 720px) {
   .page {
     padding: 0;
-    gap: clamp(10px, 2.5vw, 22px);
+    gap: 0;
   }
 
   .invitation-card {
     min-height: 100vh;
-    padding: 42px max(22px, 5vw) 52px;
+    padding: 34px 20px 40px;
   }
 
   .cover-card {
     min-height: 100vh;
-    padding: 30px max(20px, 5vw) 36px;
-  }
-
-  /* Fond aquarelle étiré sur toute la carte — téléphone */
-  main .invitation-card.cover-card,
-  .intro-overlay,
-  .invitation-card.rsvp-card,
-  .invitation-card.details-card::before {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-origin: border-box;
+    padding: 24px 18px;
   }
 
   .details-card,
@@ -1129,17 +1069,14 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .intro-overlay {
-    padding: 16px max(12px, 4vw);
-    align-items: stretch;
-    justify-content: flex-start;
+    padding: 12px;
   }
 
   .intro-card {
-    flex: 1 1 auto;
     width: 100%;
     min-height: 100vh;
-    gap: 30px;
-    padding: 42px max(22px, 5vw) 52px;
+    gap: 24px;
+    padding: 34px 20px 40px;
   }
 
   .intro-lang-switch {
@@ -1153,26 +1090,27 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .intro-monogram {
-    width: min(200px, 58vw);
+    width: 190px;
+    height: 285px;
   }
 
   .intro-countdown-wrapper {
-    gap: 18px;
+    gap: 14px;
   }
 
   .intro-countdown-title {
     font-size: 1.34rem;
-    max-width: 280px;
+    max-width: 260px;
   }
 
   .countdown-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 12px;
   }
 
   .countdown-item {
-    min-height: 118px;
-    padding: 18px 14px;
+    min-height: 112px;
+    padding: 16px 12px;
     border-radius: 22px;
   }
 
@@ -1186,7 +1124,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .intro-open-button {
     width: 100%;
-    max-width: min(320px, 100%);
+    max-width: 290px;
     padding: 16px 28px;
   }
 
@@ -1200,19 +1138,22 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .family-grid {
     grid-template-columns: 1fr auto 1fr;
-    gap: 18px;
-    margin-bottom: 48px;
+    gap: 14px;
+    margin-bottom: 42px;
     width: min(100%, 100%);
     align-items: center;
   }
 
   .monogram {
     margin: 0 auto;
-    width: min(88px, 20vw);
+    width: 78px;
+    height: 122px;
   }
 
   .cover-monogram.monogram {
-    width: min(220px, 68vw);
+    width: min(210px, 54vw);
+    height: min(315px, 44vh);
+    font-size: 12.2rem;
   }
 
   .ampersand {
@@ -1226,7 +1167,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .announcement {
-    margin-bottom: 48px;
+    margin-bottom: 42px;
   }
 
   .announcement,
@@ -1234,12 +1175,12 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   .schedule,
   .venue {
     font-size: 1.56rem;
-    line-height: 1.22;
+    line-height: 1.16;
   }
 
   .names-row {
-    gap: 14px;
-    margin: 0 auto 48px;
+    gap: 10px;
+    margin: 0 auto 42px;
   }
 
   .first-name {
@@ -1251,11 +1192,11 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .invitation-line {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
   }
 
   .date-block {
-    margin-bottom: 48px;
+    margin-bottom: 42px;
   }
 
   .date {
@@ -1267,8 +1208,8 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .rsvp-card {
-    justify-content: flex-start;
-    gap: 56px;
+    justify-content: space-between;
+    gap: 52px;
   }
 
   .rsvp-title {
@@ -1277,27 +1218,27 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .rsvp-subtitle {
     font-size: 1.42rem;
-    line-height: 1.32;
+    line-height: 1.28;
   }
 
   .rsvp-form {
-    width: min(100%, 400px);
-    flex: none;
-    justify-content: flex-start;
-    gap: 40px;
+    width: min(100%, 340px);
+    flex: 1;
+    justify-content: space-between;
+    gap: 34px;
   }
 
   .field-group {
     width: 100%;
-    gap: 16px;
+    gap: 14px;
   }
 
   .field-group.attendance-group {
-    gap: 40px;
+    gap: 36px;
   }
 
   .attendance-group > legend {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .field-group > span,
@@ -1308,18 +1249,18 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   .field-group input,
   .field-group textarea {
     font-size: 1.18rem;
-    padding: 18px 20px;
+    padding: 17px 18px;
   }
 
   .attendance-options {
-    margin-top: 8px;
-    gap: 18px;
+    margin-top: 6px;
+    gap: 16px;
     justify-content: center;
   }
 
   .choice-pill span {
     min-width: 96px;
-    padding: 14px 22px;
+    padding: 13px 20px;
     font-size: 1.16rem;
   }
 
@@ -1328,8 +1269,8 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .form-actions {
-    padding-top: 26px;
-    gap: 20px;
+    padding-top: 22px;
+    gap: 18px;
   }
 
   .submit-button {
@@ -1339,31 +1280,23 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 }
 
 @media (max-width: 556px) {
-  .page {
-    gap: clamp(8px, 2.5vw, 20px);
-    padding: 0;
-  }
-
-  .invitation-card {
-    padding: 40px max(18px, 4.5vw) 48px;
-  }
-
   .intro-monogram {
-    width: min(176px, 54vw);
+    width: 172px;
+    height: 258px;
   }
 
   .intro-countdown-title {
-    max-width: 240px;
+    max-width: 220px;
     font-size: 1.24rem;
   }
 
   .countdown-grid {
-    gap: 12px;
+    gap: 10px;
   }
 
   .countdown-item {
-    min-height: 108px;
-    padding: 16px 12px;
+    min-height: 102px;
+    padding: 14px 10px;
   }
 
   .countdown-value {
@@ -1377,53 +1310,45 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   .rsvp-card {
     min-height: auto;
     justify-content: flex-start;
-    gap: 44px;
+    gap: 36px;
   }
 
   .rsvp-form {
     flex: none;
     justify-content: flex-start;
-    gap: 34px;
+    gap: 28px;
   }
 
   .field-group {
-    gap: 14px;
+    gap: 12px;
   }
 
   .field-group.attendance-group {
-    gap: 34px;
+    gap: 30px;
   }
 
   .attendance-group > legend {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .field-group input,
   .field-group textarea {
-    padding: 17px 18px;
+    padding: 16px 17px;
   }
 
   .attendance-options {
-    margin-top: 6px;
-    gap: 16px;
+    margin-top: 4px;
+    gap: 14px;
   }
 
   .form-actions {
-    padding-top: 20px;
-  }
-
-  /* Très petit écran : même logique d’étirement (évite tout retour au cover) */
-  main .invitation-card.cover-card,
-  .intro-overlay,
-  .invitation-card.rsvp-card,
-  .invitation-card.details-card::before {
-    background-size: 100% 100%;
-    background-origin: border-box;
+    padding-top: 16px;
   }
 }
 
 @media (max-width: 370px) {
   .cover-monogram.monogram {
-    width: min(188px, 72vw);
+    width: min(160px, 50vw);
+    height: min(240px, 36vh);
   }
 }

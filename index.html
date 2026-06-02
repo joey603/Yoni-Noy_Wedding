@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alon & Elsa | Faire-part</title>
+    <title>Yoni & Noy | Faire-part</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=alone-elsa-29" />
-    <link rel="preload" as="image" href="assets/logo-aa.png" />
-    <link rel="preload" as="image" href="assets/watercolor-lavender-gold-bg-v2.png" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="intro-active" data-invite-couple="alone-elsa">
+  <body class="intro-active">
     <section class="intro-overlay" id="intro-overlay" aria-label="Accueil du faire-part">
       <div class="invitation-card cover-card intro-card">
         <div class="intro-lang-switch" role="group" aria-label="Choix de langue">
@@ -22,15 +20,8 @@
           <button type="button" class="lang-button" data-lang="he">HE</button>
         </div>
 
-        <div class="intro-monogram monogram" aria-label="Monogramme aleph aleph">
-          <img
-            class="monogram-image monogram-logo-img"
-            src="assets/logo-aa.png"
-            alt=""
-            width="690"
-            height="721"
-            decoding="async"
-          />
+        <div class="intro-monogram monogram" aria-label="Monogramme Noy et Yoni">
+          <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
         </div>
 
         <div class="intro-countdown-wrapper">
@@ -67,39 +58,29 @@
       <section class="invitation-card cover-card" aria-label="Couverture du faire-part">
         <div
           class="cover-monogram monogram"
-          aria-label="Monogramme aleph aleph"
+          aria-label="Monogramme Noy et Yoni"
           data-reveal="up"
         >
-          <img
-            class="monogram-image monogram-logo-img"
-            src="assets/logo-aa.png"
-            alt=""
-            width="690"
-            height="721"
-            decoding="async"
-          />
+          <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
         </div>
       </section>
 
       <section class="invitation-card details-card">
         <div class="family-grid">
-          <div class="family-column" data-family-column="alone" data-reveal="left">
-            <p>Famille d'Alon</p>
+          <div class="family-column" data-family-column="noy" data-reveal="left">
+            <p>Mr &amp; Mme grand parent maternel Noy</p>
+            <p>Mr &amp; Mme grand parent paternel Noy</p>
+            <p>Mr &amp; Mme parent Noy</p>
           </div>
 
-          <div class="monogram" aria-label="Monogramme aleph aleph" data-reveal="up">
-            <img
-              class="monogram-image monogram-logo-img"
-              src="assets/logo-aa.png"
-              alt=""
-              width="690"
-              height="721"
-              decoding="async"
-            />
+          <div class="monogram" aria-label="Monogramme Noy et Yoni" data-reveal="up">
+            <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
           </div>
 
-          <div class="family-column" data-family-column="elsa" data-reveal="right">
-            <p>Famille d'Elsa</p>
+          <div class="family-column" data-family-column="yoni" data-reveal="right">
+            <p>Mr &amp; Mme grand parent maternel Yoni</p>
+            <p>Mr &amp; Mme grand parent paternel Yoni</p>
+            <p>Mr &amp; Mme parent Yoni</p>
           </div>
         </div>
 
@@ -109,15 +90,15 @@
 
         <div class="names-row" data-reveal="up">
           <div class="person" data-reveal="left">
-            <h1 class="first-name" id="first-name-alone">Alon</h1>
-            <p class="hebrew-name" id="secondary-name-alone" lang="he" dir="rtl"></p>
+            <h1 class="first-name" id="first-name-noy">Noy</h1>
+            <p class="hebrew-name" id="secondary-name-noy" lang="he" dir="rtl"></p>
           </div>
 
           <div class="ampersand" id="names-separator">&amp;</div>
 
           <div class="person" data-reveal="right">
-            <h1 class="first-name" id="first-name-elsa">Elsa</h1>
-            <p class="hebrew-name" id="secondary-name-elsa" lang="he" dir="rtl"></p>
+            <h1 class="first-name" id="first-name-yoni">Yoni</h1>
+            <p class="hebrew-name" id="secondary-name-yoni" lang="he" dir="rtl"></p>
           </div>
         </div>
 
@@ -128,7 +109,7 @@
           lang="he"
           dir="rtl"
         >
-          אלון ואלזה
+          יוני ונוי
         </p>
 
         <p class="invitation-line" id="invitation-line" data-reveal="left">
@@ -136,16 +117,17 @@
         </p>
 
         <div class="date-block" data-reveal="up">
-          <p class="date" id="event-date">Dimanche 13 Decembre 2026</p>
-          <p class="venue venue-emphasis" id="venue-name">Mitham Bnei Darom, salle Troya</p>
+          <p class="date" id="event-date">Lundi 07 Septembre 2026</p>
+          <p class="venue venue-emphasis" id="venue-name">Hôtel Logos</p>
+          <p class="venue" id="venue-location">Yad HaShmona, Israël</p>
           <a
             class="waze-button"
             id="waze-link"
-            href="https://www.waze.com/ul?q=%D7%9E%D7%AA%D7%97%D7%9D%20%D7%91%D7%A0%D7%99%20%D7%93%D7%A8%D7%95%D7%9D&navigate=yes"
+            href="https://www.waze.com/ul?q=H%C3%B4tel%20Logos%2C%20Yad%20HaShmona%2C%20Isra%C3%ABl&navigate=yes"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
-            Waze
+            Ouvrir dans Waze
           </a>
         </div>
 
@@ -161,7 +143,7 @@
           <p class="rsvp-kicker" id="rsvp-kicker">Confirmation de presence</p>
           <h2 class="rsvp-title" id="rsvp-title">RSVP</h2>
           <p class="rsvp-subtitle" id="rsvp-subtitle">
-            Merci de confirmer votre presence pour le mariage d'Alon et d'Elsa et de nous laisser un petit mot.
+            Merci de nous confirmer votre presence et de nous laisser un petit mot.
           </p>
         </div>
 
@@ -216,7 +198,7 @@
           </label>
 
           <label class="field-group" data-reveal="up">
-            <span id="label-message">Un mot pour Alon et Elsa</span>
+            <span id="label-message">Un mot pour les maries</span>
             <textarea
               id="input-message"
               name="message"
@@ -240,12 +222,8 @@
       const countdownTitle = document.getElementById("intro-countdown-title");
       const countdownLabels = document.querySelectorAll("[data-countdown-label]");
       const familyColumns = {
-        alone:
-          document.querySelector('[data-family-column="alone"]') ||
-          document.querySelector('[data-family-column="noy"]'),
-        elsa:
-          document.querySelector('[data-family-column="elsa"]') ||
-          document.querySelector('[data-family-column="yoni"]'),
+        noy: document.querySelector('[data-family-column="noy"]'),
+        yoni: document.querySelector('[data-family-column="yoni"]'),
       };
       const countdownValues = {
         days: document.querySelector('[data-countdown="days"]'),
@@ -254,22 +232,18 @@
         seconds: document.querySelector('[data-countdown="seconds"]'),
       };
       const rsvpForm = document.getElementById("rsvp-form");
-      const rsvpCard = document.querySelector(".rsvp-card");
       const feedback = document.getElementById("form-feedback");
       const announcementText = document.getElementById("announcement-text");
-      const firstNameAlone =
-        document.getElementById("first-name-alone") || document.getElementById("first-name-noy");
-      const firstNameElsa =
-        document.getElementById("first-name-elsa") || document.getElementById("first-name-yoni");
-      const secondaryNameAlone =
-        document.getElementById("secondary-name-alone") || document.getElementById("secondary-name-noy");
-      const secondaryNameElsa =
-        document.getElementById("secondary-name-elsa") || document.getElementById("secondary-name-yoni");
+      const firstNameNoy = document.getElementById("first-name-noy");
+      const firstNameYoni = document.getElementById("first-name-yoni");
+      const secondaryNameNoy = document.getElementById("secondary-name-noy");
+      const secondaryNameYoni = document.getElementById("secondary-name-yoni");
       const namesSeparator = document.getElementById("names-separator");
       const invitationLine = document.getElementById("invitation-line");
       const hebrewCoupleNames = document.getElementById("hebrew-couple-names");
       const eventDate = document.getElementById("event-date");
       const venueName = document.getElementById("venue-name");
+      const venueLocation = document.getElementById("venue-location");
       const wazeLink = document.getElementById("waze-link");
       const scheduleText = document.getElementById("schedule-text");
       const rsvpKicker = document.getElementById("rsvp-kicker");
@@ -293,7 +267,7 @@
         (item) => item !== coverMonogram
       );
       const firstInvitationPage = document.querySelector("main.page .invitation-card");
-      const weddingDate = new Date("2026-12-13T20:30:00");
+      const weddingDate = new Date("2026-09-07T20:30:00");
       const introCloseDuration = 3900;
       const introFadeDuration = 3500;
       const revealLeadTime = 2000;
@@ -305,7 +279,7 @@
 
       const introTranslations = {
         fr: {
-          title: "Compte a rebours",
+          title: "Compte a rebours jusqu'au mariage",
           open: "Ouvrir l'invitation",
           labels: {
             days: "Jours",
@@ -315,7 +289,7 @@
           },
         },
         he: {
-          title: "הספירה לאחור",
+          title: "הספירה לאחור ",
           open: "להמשך",
           labels: {
             days: "ימים",
@@ -329,24 +303,25 @@
       const pageTranslations = {
         fr: {
           families: {
-            alone: ["Famille d'Alon"],
-            elsa: ["Famille d'Elsa"],
+            noy: ["Yoseph et Tsipora Avidan"],
+            yoni: ["Yohan et Veronique Assouline"],
           },
-          announcement: ["Ont la joie de vous faire part du mariage d'"],
+          announcement: ["Ont la joie de vous faire part du mariage"],
           names: {
-            alone: "Alon",
-            elsa: "Elsa",
-            secondaryAlone: "",
-            secondaryElsa: "",
+            noy: "Noy",
+            yoni: "Yoni",
+            secondaryNoy: "",
+            secondaryYoni: "",
             separator: "&",
           },
           coupleNamesLine: "",
           invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
-          eventDate: "Dimanche 13 Decembre 2026",
-          venueName: "Mitham Bnei Darom, salle Troya",
-          wazeLabel: "Waze",
+          eventDate: "Lundi 07 Septembre 2026",
+          venueName: "Hôtel Logos",
+          venueLocation: "Yad HaShmona, Israël",
+          wazeLabel: "Ouvrir dans Waze",
           wazeHref:
-            "https://www.waze.com/ul?q=Mitham%20Bnei%20Darom%2C%20salle%20Troya&navigate=yes",
+            "https://www.waze.com/ul?q=H%C3%B4tel%20Logos%2C%20Yad%20HaShmona%2C%20Isra%C3%ABl&navigate=yes",
           schedule: [
             "Le cocktail debutera a 18h00",
             "La ceremonie religieuse se tiendra a 20h30",
@@ -355,8 +330,7 @@
           rsvp: {
             kicker: "Confirmation de presence",
             title: "RSVP",
-            subtitle:
-              "Merci de confirmer votre presence pour le mariage d'Alon et d'Elsa et de nous laisser un petit mot.",
+            subtitle: "Merci de nous confirmer votre presence et de nous laisser un petit mot.",
             lastName: "Nom",
             lastNamePlaceholder: "Votre nom",
             firstName: "Prenom",
@@ -366,7 +340,7 @@
             no: "Non",
             guests: "Nombre de personnes",
             guestsPlaceholder: "1",
-            message: "Un mot pour Alon et Elsa",
+            message: "Un mot pour les maries",
             messagePlaceholder: "Ecrivez votre message ici...",
             submit: "Envoyer",
             feedback: "Merci, votre reponse a bien ete enregistree.",
@@ -377,24 +351,25 @@
         },
         he: {
           families: {
-            alone: ["המשפחה של", "אלון"],
-            elsa: ["המשפחה של", "אלזה"],
+            noy: ["יוסף וציפורה", "אבידן"],
+            yoni: ["יוהן וורוניק", "אסולין"],
           },
-          announcement: ["שמחים להזמינכם לחתונה"],
+          announcement: ["שמחים להזמינכם לחתונה של"],
           names: {
-            alone: "אלון",
-            elsa: "אלזה",
-            secondaryAlone: "",
-            secondaryElsa: "",
+            noy: "נוי",
+            yoni: "יוני",
+            secondaryNoy: "",
+            secondaryYoni: "",
             separator: "ו",
           },
-          coupleNamesLine: "אלון ואלזה",
-          invitationLine: "שתתקיים ביום ראשון",
-          eventDate: "13 בדצמבר 2026",
-          venueName: "מתחם בני דרום, אולם טרויה",
-          wazeLabel: "Waze",
+          coupleNamesLine: "יוני ונוי",
+          invitationLine: "שתתקיים ביום שני",
+          eventDate: "7 בספטמבר 2026",
+          venueName: "במלון לוגוס, יד השמונה",
+          venueLocation: "",
+          wazeLabel: "פתיחה ב-Waze",
           wazeHref:
-            "https://www.waze.com/ul?q=%D7%9E%D7%AA%D7%97%D7%9D%20%D7%91%D7%A0%D7%99%20%D7%93%D7%A8%D7%95%D7%9D%2C%20%D7%90%D7%95%D7%9C%D7%9D%20%D7%98%D7%A8%D7%95%D7%99%D7%94&navigate=yes",
+            "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
           schedule: ["קבלת הפנים תחל בשעה 18:00", "טקס החופה יתקיים בשעה 20:30"],
           rsvp: {
             kicker: "אישור הגעה",
@@ -489,26 +464,24 @@
 
         const pageCopy = pageTranslations[lang];
 
-        if (familyColumns.alone && familyColumns.elsa) {
-          if (lang === "he") {
-            const heFamily = (pair) =>
-              `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
-            familyColumns.alone.innerHTML = heFamily(pageCopy.families.alone);
-            familyColumns.elsa.innerHTML = heFamily(pageCopy.families.elsa);
-          } else {
-            familyColumns.alone.innerHTML = pageCopy.families.alone.map((line) => `<p>${line}</p>`).join("");
-            familyColumns.elsa.innerHTML = pageCopy.families.elsa.map((line) => `<p>${line}</p>`).join("");
-          }
+        if (lang === "he") {
+          const heFamily = (pair) =>
+            `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
+          familyColumns.noy.innerHTML = heFamily(pageCopy.families.noy);
+          familyColumns.yoni.innerHTML = heFamily(pageCopy.families.yoni);
+        } else {
+          familyColumns.noy.innerHTML = pageCopy.families.noy.map((line) => `<p>${line}</p>`).join("");
+          familyColumns.yoni.innerHTML = pageCopy.families.yoni.map((line) => `<p>${line}</p>`).join("");
         }
         announcementText.innerHTML = pageCopy.announcement.map((line) => `<p>${line}</p>`).join("");
-        if (firstNameAlone) firstNameAlone.textContent = pageCopy.names.alone;
-        if (firstNameElsa) firstNameElsa.textContent = pageCopy.names.elsa;
-        if (secondaryNameAlone) secondaryNameAlone.textContent = pageCopy.names.secondaryAlone;
-        if (secondaryNameElsa) secondaryNameElsa.textContent = pageCopy.names.secondaryElsa;
-        if (secondaryNameAlone) secondaryNameAlone.lang = lang === "he" ? "fr" : "he";
-        if (secondaryNameElsa) secondaryNameElsa.lang = lang === "he" ? "fr" : "he";
-        if (secondaryNameAlone) secondaryNameAlone.dir = lang === "he" ? "ltr" : "rtl";
-        if (secondaryNameElsa) secondaryNameElsa.dir = lang === "he" ? "ltr" : "rtl";
+        firstNameNoy.textContent = pageCopy.names.noy;
+        firstNameYoni.textContent = pageCopy.names.yoni;
+        secondaryNameNoy.textContent = pageCopy.names.secondaryNoy;
+        secondaryNameYoni.textContent = pageCopy.names.secondaryYoni;
+        secondaryNameNoy.lang = lang === "he" ? "fr" : "he";
+        secondaryNameYoni.lang = lang === "he" ? "fr" : "he";
+        secondaryNameNoy.dir = lang === "he" ? "ltr" : "rtl";
+        secondaryNameYoni.dir = lang === "he" ? "ltr" : "rtl";
         namesSeparator.textContent = pageCopy.names.separator;
         if (hebrewCoupleNames) {
           hebrewCoupleNames.textContent = pageCopy.coupleNamesLine || "";
@@ -516,7 +489,7 @@
         invitationLine.textContent = pageCopy.invitationLine;
         eventDate.textContent = pageCopy.eventDate;
         venueName.textContent = pageCopy.venueName;
-        venueName.setAttribute("dir", lang === "he" ? "rtl" : "ltr");
+        venueLocation.textContent = pageCopy.venueLocation;
         wazeLink.textContent = pageCopy.wazeLabel;
         wazeLink.href = pageCopy.wazeHref;
         scheduleText.innerHTML = pageCopy.schedule.map((line) => `<p>${line}</p>`).join("");
@@ -601,20 +574,6 @@
         }
       }
 
-      function getMaxInvitationScrollY() {
-        if (!rsvpCard) return 0;
-        const bottom = rsvpCard.getBoundingClientRect().bottom + window.scrollY;
-        return Math.max(0, bottom - window.innerHeight);
-      }
-
-      function clampInvitationScroll() {
-        if (document.body.classList.contains("intro-active")) return;
-        const maxScrollY = getMaxInvitationScrollY();
-        if (window.scrollY > maxScrollY) {
-          window.scrollTo({ top: maxScrollY, behavior: "auto" });
-        }
-      }
-
       updateIntroLanguage("fr");
       updateCountdown();
       setInterval(updateCountdown, 1000);
@@ -635,7 +594,6 @@
             await submitRsvp();
             feedback.textContent = pageTranslations[currentLang].rsvp.feedback;
             rsvpForm.reset();
-            window.requestAnimationFrame(clampInvitationScroll);
           } catch (error) {
             feedback.textContent = pageTranslations[currentLang].rsvp.error;
           } finally {
@@ -647,9 +605,6 @@
       });
 
       window.addEventListener("scroll", markUserNavigatedAway, { passive: true });
-      window.addEventListener("scroll", clampInvitationScroll, { passive: true });
-      window.addEventListener("resize", clampInvitationScroll);
-      window.requestAnimationFrame(clampInvitationScroll);
 
       openInvitationButton.addEventListener("click", () => {
         keepIntroFocus = true;

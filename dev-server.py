@@ -38,10 +38,12 @@ if __name__ == "__main__":
     try:
         with open(idx, "r", encoding="utf-8") as f:
             raw = f.read()
-        if "Noy" in raw or "Yoni" in raw or "Avidan" in raw or "Assouline" in raw:
-            print("!!! ATTENTION: index.html contient encore d’anciens noms (Noy/Yoni/…).")
+        if "Yoni & Noy" in raw or 'title>Yoni' in raw:
+            print("index.html: contenu Yoni & Noy (OK).")
+        elif "Alon & Elsa" in raw or "alone-elsa" in raw:
+            print("!!! ATTENTION: index.html contient le faire-part Alon & Elsa — mauvais dépôt pour ce serveur.")
         else:
-            print("index.html: contenu Alon & Elsa (OK).")
+            print("index.html: type de faire-part non reconnu.")
     except OSError as e:
         print(f"Impossible de lire index.html: {e}")
     print(f"Dossier servi: {_ROOT}")
