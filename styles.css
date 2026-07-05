@@ -151,6 +151,16 @@ body.is-hebrew .date {
   font-style: normal;
 }
 
+.date-hebrew {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  margin-bottom: 10px;
+  transform: translateY(-14px);
+}
+
+.date-hebrew:empty {
+  display: none;
+}
+
 [data-reveal] {
   opacity: 0;
   filter: blur(8px);

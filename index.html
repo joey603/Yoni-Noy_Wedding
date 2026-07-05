@@ -117,6 +117,7 @@
         </p>
 
         <div class="date-block" data-reveal="up">
+          <p class="date date-hebrew" id="event-date-hebrew" lang="he" dir="rtl"></p>
           <p class="date" id="event-date">Lundi 07 Septembre 2026</p>
           <p class="venue venue-emphasis" id="venue-name">Hôtel Logos</p>
           <p class="venue" id="venue-location">Yad HaShmona, Israël</p>
@@ -241,6 +242,7 @@
       const namesSeparator = document.getElementById("names-separator");
       const invitationLine = document.getElementById("invitation-line");
       const hebrewCoupleNames = document.getElementById("hebrew-couple-names");
+      const eventDateHebrew = document.getElementById("event-date-hebrew");
       const eventDate = document.getElementById("event-date");
       const venueName = document.getElementById("venue-name");
       const venueLocation = document.getElementById("venue-location");
@@ -316,6 +318,7 @@
           },
           coupleNamesLine: "",
           invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
+          eventDateHebrew: "",
           eventDate: "Lundi 07 Septembre 2026",
           venueName: "Hôtel Logos",
           venueLocation: "Yad HaShmona, Israël",
@@ -351,7 +354,7 @@
         },
         he: {
           families: {
-            noy: ["יוסף וציפורה", "אבידן"],
+            noy: ["ציפי ויוסי", "אבידן"],
             yoni: ["יוהן וורוניק", "אסולין"],
           },
           announcement: ["שמחים להזמינכם לחתונה של"],
@@ -364,6 +367,7 @@
           },
           coupleNamesLine: "יוני ונוי",
           invitationLine: "שתתקיים ביום שני",
+          eventDateHebrew: "כ׳ה אלול תשפ״ו",
           eventDate: "7 בספטמבר 2026",
           venueName: "במלון לוגוס, יד השמונה",
           venueLocation: "",
@@ -487,6 +491,7 @@
           hebrewCoupleNames.textContent = pageCopy.coupleNamesLine || "";
         }
         invitationLine.textContent = pageCopy.invitationLine;
+        eventDateHebrew.textContent = pageCopy.eventDateHebrew || "";
         eventDate.textContent = pageCopy.eventDate;
         venueName.textContent = pageCopy.venueName;
         venueLocation.textContent = pageCopy.venueLocation;
