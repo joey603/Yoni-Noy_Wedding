@@ -12,50 +12,19 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="intro-active">
-    <section class="intro-overlay" id="intro-overlay" aria-label="Accueil du faire-part">
-      <div class="invitation-card cover-card intro-card">
-        <div class="intro-lang-switch" role="group" aria-label="Choix de langue">
+  <body>
+    <main class="page">
+      <section class="invitation-card cover-card" aria-label="Couverture du faire-part">
+        <div
+          class="intro-lang-switch cover-lang-switch"
+          role="group"
+          aria-label="Choix de langue"
+          data-reveal="up"
+        >
           <button type="button" class="lang-button is-active" data-lang="fr">FR</button>
           <button type="button" class="lang-button" data-lang="he">HE</button>
         </div>
 
-        <div class="intro-monogram monogram" aria-label="Monogramme Noy et Yoni">
-          <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
-        </div>
-
-        <div class="intro-countdown-wrapper">
-          <p class="intro-countdown-title" id="intro-countdown-title">
-          </p>
-
-          <div class="countdown-grid" id="countdown-grid">
-            <div class="countdown-item">
-              <span class="countdown-value" data-countdown="days">0</span>
-              <span class="countdown-label" data-countdown-label="days">Jours</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-value" data-countdown="hours">0</span>
-              <span class="countdown-label" data-countdown-label="hours">Heures</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-value" data-countdown="minutes">0</span>
-              <span class="countdown-label" data-countdown-label="minutes">Minutes</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-value" data-countdown="seconds">0</span>
-              <span class="countdown-label" data-countdown-label="seconds">Secondes</span>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" class="intro-open-button" id="open-invitation">
-          Ouvrir l'invitation
-        </button>
-      </div>
-    </section>
-
-    <main class="page">
-      <section class="invitation-card cover-card" aria-label="Couverture du faire-part">
         <div
           class="cover-monogram monogram"
           aria-label="Monogramme Noy et Yoni"
@@ -172,7 +141,7 @@
           </label>
 
           <fieldset class="field-group attendance-group" data-reveal="right">
-            <legend id="attendance-legend">Serez-vous present a la houppa ?</legend>
+            <legend id="attendance-legend">Serez-vous present ?</legend>
             <div class="attendance-options">
               <label class="choice-pill">
                 <input type="radio" name="houppa" value="oui" required />
@@ -210,6 +179,30 @@
 
           <div class="form-actions" data-reveal="up">
             <button type="submit" class="submit-button" id="submit-button">Envoyer</button>
+
+            <div class="intro-countdown-wrapper rsvp-countdown-wrapper" aria-label="Compte a rebours jusqu'au mariage">
+              <p class="intro-countdown-title" id="intro-countdown-title"></p>
+
+              <div class="countdown-grid" id="countdown-grid">
+                <div class="countdown-item">
+                  <span class="countdown-value" data-countdown="days">0</span>
+                  <span class="countdown-label" data-countdown-label="days">Jours</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-value" data-countdown="hours">0</span>
+                  <span class="countdown-label" data-countdown-label="hours">Heures</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-value" data-countdown="minutes">0</span>
+                  <span class="countdown-label" data-countdown-label="minutes">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-value" data-countdown="seconds">0</span>
+                  <span class="countdown-label" data-countdown-label="seconds">Secondes</span>
+                </div>
+              </div>
+            </div>
+
             <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
           </div>
         </form>
@@ -217,8 +210,6 @@
     </main>
 
     <script>
-      const introOverlay = document.getElementById("intro-overlay");
-      const openInvitationButton = document.getElementById("open-invitation");
       const langButtons = document.querySelectorAll(".lang-button");
       const countdownTitle = document.getElementById("intro-countdown-title");
       const countdownLabels = document.querySelectorAll("[data-countdown-label]");
@@ -265,48 +256,20 @@
       const submitButton = document.getElementById("submit-button");
       const revealItems = document.querySelectorAll("[data-reveal]");
       const coverMonogram = document.querySelector(".cover-monogram[data-reveal]");
+      const coverLangSwitch = document.querySelector(".cover-lang-switch[data-reveal]");
       const deferredRevealItems = Array.from(revealItems).filter(
-        (item) => item !== coverMonogram
+        (item) => item !== coverMonogram && item !== coverLangSwitch
       );
-      const firstInvitationPage = document.querySelector("main.page .invitation-card");
       const weddingDate = new Date("2026-09-07T20:30:00");
-      const introCloseDuration = 3900;
-      const introFadeDuration = 3500;
-      const revealLeadTime = 2000;
-      const coverMonogramLeadTime = 2400;
       let currentLang = "fr";
       let revealStarted = false;
       let coverMonogramRevealed = false;
-      let keepIntroFocus = true;
-
-      const introTranslations = {
-        fr: {
-          title: "Compte a rebours jusqu'au mariage",
-          open: "Ouvrir l'invitation",
-          labels: {
-            days: "Jours",
-            hours: "Heures",
-            minutes: "Minutes",
-            seconds: "Secondes",
-          },
-        },
-        he: {
-          title: "הספירה לאחור ",
-          open: "להמשך",
-          labels: {
-            days: "ימים",
-            hours: "שעות",
-            minutes: "דקות",
-            seconds: "שניות",
-          },
-        },
-      };
 
       const pageTranslations = {
         fr: {
           families: {
-            noy: ["Yoseph et Tsipora Avidan"],
-            yoni: ["Yohan et Veronique Assouline"],
+            noy: ["Yoseph et Tsipora", "Avidan"],
+            yoni: ["Yohan et Veronique", "Assouline"],
           },
           announcement: ["Ont la joie de vous faire part du mariage"],
           names: {
@@ -330,6 +293,15 @@
             "La ceremonie religieuse se tiendra a 20h30",
             "et sera suivie de la reception",
           ],
+          countdown: {
+            title: "Compte a rebours jusqu'au mariage",
+            labels: {
+              days: "Jours",
+              hours: "Heures",
+              minutes: "Minutes",
+              seconds: "Secondes",
+            },
+          },
           rsvp: {
             kicker: "Confirmation de presence",
             title: "RSVP",
@@ -338,7 +310,7 @@
             lastNamePlaceholder: "Votre nom",
             firstName: "Prenom",
             firstNamePlaceholder: "Votre prenom",
-            attendance: "Serez-vous present a la houppa ?",
+            attendance: "Serez-vous present ?",
             yes: "Oui",
             no: "Non",
             guests: "Nombre de personnes",
@@ -375,6 +347,15 @@
           wazeHref:
             "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
           schedule: ["קבלת הפנים תחל בשעה 18:00", "טקס החופה יתקיים בשעה 20:30"],
+          countdown: {
+            title: "הספירה לאחור ",
+            labels: {
+              days: "ימים",
+              hours: "שעות",
+              minutes: "דקות",
+              seconds: "שניות",
+            },
+          },
           rsvp: {
             kicker: "אישור הגעה",
             title: "",
@@ -383,7 +364,7 @@
             lastNamePlaceholder: "שם המשפחה שלכם",
             firstName: "שם פרטי",
             firstNamePlaceholder: "השם הפרטי שלכם",
-            attendance: "האם תהיו נוכחים בחופה?",
+            attendance: "האם תהיו נוכחים?",
             yes: "כן",
             no: "לא",
             guests: "מספר משתתפים",
@@ -449,34 +430,26 @@
         }
       }
 
-      function updateIntroLanguage(lang) {
+      function updatePageLanguage(lang) {
         currentLang = lang;
-        const copy = introTranslations[lang];
-        countdownTitle.textContent = copy.title;
-        openInvitationButton.textContent = copy.open;
+        const pageCopy = pageTranslations[lang];
+        countdownTitle.textContent = pageCopy.countdown.title;
         document.documentElement.lang = lang === "he" ? "he" : "fr";
         document.body.classList.toggle("is-hebrew", lang === "he");
 
         countdownLabels.forEach((label) => {
           const unit = label.dataset.countdownLabel;
-          label.textContent = copy.labels[unit];
+          label.textContent = pageCopy.countdown.labels[unit];
         });
 
         langButtons.forEach((button) => {
           button.classList.toggle("is-active", button.dataset.lang === lang);
         });
 
-        const pageCopy = pageTranslations[lang];
-
-        if (lang === "he") {
-          const heFamily = (pair) =>
-            `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
-          familyColumns.noy.innerHTML = heFamily(pageCopy.families.noy);
-          familyColumns.yoni.innerHTML = heFamily(pageCopy.families.yoni);
-        } else {
-          familyColumns.noy.innerHTML = pageCopy.families.noy.map((line) => `<p>${line}</p>`).join("");
-          familyColumns.yoni.innerHTML = pageCopy.families.yoni.map((line) => `<p>${line}</p>`).join("");
-        }
+        const renderFamily = (pair) =>
+          `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
+        familyColumns.noy.innerHTML = renderFamily(pageCopy.families.noy);
+        familyColumns.yoni.innerHTML = renderFamily(pageCopy.families.yoni);
         announcementText.innerHTML = pageCopy.announcement.map((line) => `<p>${line}</p>`).join("");
         firstNameNoy.textContent = pageCopy.names.noy;
         firstNameYoni.textContent = pageCopy.names.yoni;
@@ -562,30 +535,24 @@
         deferredRevealItems.forEach((item) => revealObserver.observe(item));
       }
 
-      function revealCoverMonogram() {
+      function revealCoverElements() {
         if (coverMonogramRevealed) return;
         coverMonogramRevealed = true;
+        coverLangSwitch?.classList.add("is-visible");
         coverMonogram?.classList.add("is-visible");
       }
 
-      function focusFirstInvitationPage() {
-        window.scrollTo({ top: 0, behavior: "auto" });
-        firstInvitationPage?.scrollIntoView({ block: "start", behavior: "auto" });
-      }
-
-      function markUserNavigatedAway() {
-        if (window.scrollY > 40) {
-          keepIntroFocus = false;
-        }
-      }
-
-      updateIntroLanguage("fr");
+      updatePageLanguage("fr");
       updateCountdown();
       setInterval(updateCountdown, 1000);
+      window.requestAnimationFrame(() => {
+        revealCoverElements();
+        startRevealAnimations();
+      });
 
       langButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          updateIntroLanguage(button.dataset.lang);
+          updatePageLanguage(button.dataset.lang);
         });
       });
 
@@ -607,30 +574,6 @@
         };
 
         run();
-      });
-
-      window.addEventListener("scroll", markUserNavigatedAway, { passive: true });
-
-      openInvitationButton.addEventListener("click", () => {
-        keepIntroFocus = true;
-        document.body.classList.remove("intro-active");
-        window.requestAnimationFrame(focusFirstInvitationPage);
-        introOverlay.classList.add("is-closing");
-        window.setTimeout(
-          revealCoverMonogram,
-          Math.max(0, introFadeDuration - coverMonogramLeadTime)
-        );
-        window.setTimeout(
-          startRevealAnimations,
-          Math.max(0, introCloseDuration - revealLeadTime)
-        );
-        window.setTimeout(() => {
-          introOverlay.hidden = true;
-          if (keepIntroFocus) {
-            focusFirstInvitationPage();
-          }
-          revealCoverMonogram();
-        }, introCloseDuration);
       });
     </script>
   </body>
