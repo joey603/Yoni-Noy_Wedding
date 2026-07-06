@@ -9,6 +9,7 @@
   --gold: rgba(182, 145, 87, 0.9);
   --border: rgba(94, 70, 32, 0.16);
   --shadow: rgba(94, 70, 32, 0.14);
+  --font-fr: "Noto Serif Display", serif;
 }
 
 * {
@@ -18,7 +19,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Cinzel", serif;
+  font-family: var(--font-fr);
   color: var(--text);
   background: var(--paper);
   overflow-x: hidden;
@@ -483,7 +484,7 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 }
 
 .monogram-letter {
-  font-family: "Cinzel", serif;
+  font-family: var(--font-fr);
   font-size: 236px;
   font-weight: 100;
   line-height: 1;
@@ -539,7 +540,7 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 
 .first-name {
   margin: 0;
-  font-family: "Cinzel", serif;
+  font-family: var(--font-fr);
   font-size: clamp(4.4rem, 10vw, 7.2rem);
   font-weight: 500;
   line-height: 0.92;
@@ -560,7 +561,7 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 
 .ampersand {
   align-self: center;
-  font-family: "Cinzel", serif;
+  font-family: var(--font-fr);
   font-size: clamp(4.8rem, 8vw, 7rem);
   line-height: 0.9;
   color: #3e3a39;
