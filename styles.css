@@ -651,7 +651,7 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 .venue-block {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: clamp(12px, 2vh, 20px) auto 0;
 }
 
 .waze-button {
