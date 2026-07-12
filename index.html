@@ -79,6 +79,18 @@
 
         <div class="details-rule" aria-hidden="true" data-reveal="up"></div>
 
+        <div class="venue-block" data-reveal="up">
+          <a
+            class="waze-button"
+            id="waze-link"
+            href="https://www.waze.com/ul?q=Mitham%20Bnei%20Darom%2C%20salle%20Troya&navigate=yes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span id="venue-name">Mitham Bnei Darom, salle Troya</span>
+          </a>
+        </div>
+
         <div class="schedule" id="schedule-text" data-reveal="up">
           <p>Accueil à 17h30</p>
           <p>Cérémonie à 18h30</p>
@@ -253,6 +265,8 @@
       const firstNameYoni = document.getElementById("first-name-yoni");
       const namesSeparator = document.getElementById("names-separator");
       const scheduleText = document.getElementById("schedule-text");
+      const venueName = document.getElementById("venue-name");
+      const wazeLink = document.getElementById("waze-link");
       const thanksTitle = document.getElementById("thanks-title");
       const thanksMessage = document.getElementById("thanks-message");
       const thanksMessageExtra = document.getElementById("thanks-message-extra");
@@ -306,6 +320,9 @@
             yoni: "YONI",
             separator: "and\u00A0\u00A0",
           },
+          venueName: "Mitham Bnei Darom, salle Troya",
+          wazeHref:
+            "https://www.waze.com/ul?q=Mitham%20Bnei%20Darom%2C%20salle%20Troya&navigate=yes",
           schedule: [
             "Accueil à 17h30",
             "Cérémonie à 18h30",
@@ -315,7 +332,8 @@
             title: "Thank You",
             message:
               "Nous vous remercions du fond du cœur d'être présents en ce jour si spécial et pour tout votre amour et soutien.",
-            messageExtra: "",
+            messageExtra:
+              "Nous sommes heureux de partager avec vous ce moment spécial, et que vous soyez à nos côtés. Les photos de la houppa, laissez-les à nos photographes ❤️",
           },
           countdown: {
             title: "Compte a rebours jusqu'au mariage",
@@ -367,6 +385,9 @@
             yoni: "YONI",
             separator: "and\u00A0\u00A0",
           },
+          venueName: "מתחם בני דרום, אולם טרויה",
+          wazeHref:
+            "https://www.waze.com/ul?q=%D7%9E%D7%AA%D7%97%D7%9D%20%D7%91%D7%A0%D7%99%20%D7%93%D7%A8%D7%95%D7%9D%2C%20%D7%90%D7%95%D7%9C%D7%9D%20%D7%98%D7%A8%D7%95%D7%99%D7%94&navigate=yes",
           schedule: [
             "קבלת פנים 17:30",
             "חופה 18:30",
@@ -485,6 +506,13 @@
         firstNameNoy.textContent = pageCopy.names.noy;
         firstNameYoni.textContent = pageCopy.names.yoni;
         namesSeparator.textContent = pageCopy.names.separator;
+        if (venueName) {
+          venueName.textContent = pageCopy.venueName;
+          venueName.setAttribute("dir", lang === "he" ? "rtl" : "ltr");
+        }
+        if (wazeLink) {
+          wazeLink.href = pageCopy.wazeHref;
+        }
         scheduleText.innerHTML = pageCopy.schedule
           .map((line) => {
             if (typeof line === "string") return `<p>${line}</p>`;

@@ -648,6 +648,48 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
   transform: translateY(2px);
 }
 
+.venue-block {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.waze-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(100%, 420px);
+  padding: 10px 18px;
+  border: 1px solid rgba(22, 22, 22, 0.28);
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--font-fr);
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.waze-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 24px rgba(94, 70, 32, 0.1);
+}
+
+body.is-hebrew .waze-button {
+  font-family: "Assistant", sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 .schedule {
   max-width: 700px;
   margin: 0 auto;
