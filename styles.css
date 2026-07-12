@@ -10,6 +10,8 @@
   --border: rgba(94, 70, 32, 0.16);
   --shadow: rgba(94, 70, 32, 0.14);
   --font-fr: "Noto Serif Display", serif;
+  --font-script: "Great Vibes", cursive;
+  --ink: #161616;
 }
 
 * {
@@ -43,9 +45,64 @@ body.is-hebrew .form-feedback {
   font-family: "Assistant", sans-serif;
 }
 
+body.is-hebrew .rsvp-kicker,
+body.is-hebrew .rsvp-title,
+body.is-hebrew .rsvp-subtitle,
+body.is-hebrew .field-group > span,
+body.is-hebrew .field-group > legend,
+body.is-hebrew .choice-pill span,
+body.is-hebrew .submit-button,
+body.is-hebrew .form-feedback,
+body.is-hebrew .rsvp-countdown-wrapper .intro-countdown-title,
+body.is-hebrew .rsvp-countdown-wrapper .countdown-label {
+  font-family: "Assistant", sans-serif;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
 body.is-hebrew .rsvp-kicker {
-  font-weight: 400;
-  margin-bottom: clamp(12px, 2vw, 16px);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: #3e3a39;
+}
+
+body.is-hebrew .rsvp-subtitle {
+  font-size: clamp(0.88rem, 1.3vw, 1.05rem);
+  line-height: 1.5;
+}
+
+body.is-hebrew .field-group > span,
+body.is-hebrew .field-group > legend {
+  font-size: clamp(0.9rem, 1.35vw, 1.08rem);
+  line-height: 1.35;
+}
+
+body.is-hebrew .field-group input,
+body.is-hebrew .field-group textarea {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  letter-spacing: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+body.is-hebrew .choice-pill span {
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+}
+
+body.is-hebrew .submit-button {
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+}
+
+body.is-hebrew .form-feedback {
+  font-size: clamp(0.88rem, 1.3vw, 1.02rem);
+}
+
+body.is-hebrew .rsvp-countdown-wrapper .intro-countdown-title {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
 }
 
 body.is-hebrew .rsvp-title {
@@ -57,23 +114,21 @@ body.is-hebrew #rsvp-subtitle:empty {
 }
 
 body.is-hebrew .first-name {
-  font-family: "Assistant", sans-serif;
-  font-size: clamp(3.8rem, 8vw, 6rem);
-  line-height: 1.02;
+  font-family: var(--font-fr);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
-body.is-hebrew .hebrew-name {
-  font-family: "Cinzel", serif;
-  font-size: clamp(1rem, 1.7vw, 1.45rem);
-  letter-spacing: 0.08em;
+body.is-hebrew .ampersand {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+
+body.is-hebrew .names-row,
+body.is-hebrew .details-monogram {
   direction: ltr;
-}
-
-body.is-hebrew .field-group input,
-body.is-hebrew .field-group textarea {
-  direction: rtl;
-  text-align: right;
-  font-family: "Assistant", sans-serif;
 }
 
 body.is-hebrew .family-grid {
@@ -85,62 +140,104 @@ body.is-hebrew .family-column {
   text-align: center;
 }
 
-body.is-hebrew .family-column .family-given,
-body.is-hebrew .family-column .family-surname {
-  text-align: center;
+body.is-hebrew .thanks-title {
+  font-family: var(--font-script);
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
-body.is-hebrew .family-column .family-given {
-  margin: 0;
+body.is-hebrew .announcement,
+body.is-hebrew .schedule,
+body.is-hebrew .thanks-message,
+body.is-hebrew .family-column {
+  font-family: "Assistant", sans-serif;
+  text-transform: none;
+  letter-spacing: 0.02em;
 }
 
-body.is-hebrew .family-column .family-surname {
-  margin: 6px 0 0;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-
-body.is-hebrew .details-card .monogram {
-  transform: none;
-  margin: 0 auto;
-  justify-self: center;
-  align-self: center;
-}
-
-body.is-hebrew .names-row {
-  display: none;
+body.is-hebrew .family-column .family-role {
+  letter-spacing: 0.04em;
+  font-size: 0.78em;
 }
 
 body.is-hebrew .announcement {
   margin-bottom: clamp(10px, 2vw, 18px);
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  line-height: 1.45;
+}
+
+body.is-hebrew .schedule {
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  line-height: 1.45;
+}
+
+body.is-hebrew .family-column {
+  font-size: clamp(1.02rem, 1.5vw, 1.24rem);
+  line-height: 1.45;
+}
+
+body.is-hebrew .thanks-message {
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.55;
+}
+
+body.is-hebrew .thanks-message-extra {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-top: 10px;
+}
+
+body.is-hebrew .details-monogram-letter {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+body.is-hebrew .details-monogram-divider {
+  height: clamp(32px, 5vw, 48px);
+}
+
+body.is-hebrew .details-rule {
+  margin: 2px auto;
+}
+
+body.is-hebrew .first-name {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+body.is-hebrew .ampersand {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+body.is-hebrew .announcement {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+body.is-hebrew .schedule {
+  line-height: 1.4;
+}
+
+body.is-hebrew .family-grid {
+  margin: 0 auto;
+  gap: clamp(10px, 2vw, 24px);
+}
+
+body.is-hebrew .thanks-block {
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+body.is-hebrew .thanks-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin-bottom: 8px;
 }
 
 .hebrew-couple-names {
-  display: none;
-  margin: clamp(14px, 2.5vw, 26px) auto;
-  max-width: 760px;
-  text-align: center;
-  font-family: "Assistant", sans-serif;
-  font-size: clamp(2.5rem, 7.2vw, 5rem);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: 0.03em;
-  color: #3e3a39;
-}
-
-body.is-hebrew .invitation-line {
-  margin-top: clamp(8px, 1.5vw, 16px);
-}
-
-body.is-hebrew .hebrew-couple-names {
-  display: block;
-}
-
-body.is-hebrew .venue.venue-emphasis {
-  font-style: normal;
-}
-
-body.is-hebrew #venue-location:empty {
   display: none;
 }
 
@@ -240,7 +337,24 @@ body.is-hebrew .date {
 
 .cover-card {
   justify-content: center;
-  padding: clamp(24px, 4vw, 40px);
+  align-items: center;
+  gap: clamp(22px, 4.5vh, 48px);
+  padding: clamp(16px, 2.5vh, 28px) clamp(18px, 4vw, 48px) clamp(14px, 2vh, 24px);
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 1.1s ease,
+    transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cover-card.is-entering {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 body.is-hebrew .intro-lang-switch {
@@ -266,19 +380,24 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 }
 
 .cover-lang-switch {
-  margin-bottom: clamp(18px, 3vw, 34px);
-}
-
-.cover-lang-switch[data-reveal="up"].is-visible {
-  transform: translate(0, 0) scale(1);
+  flex-shrink: 0;
+  margin: 0;
 }
 
 .cover-lang-switch[data-reveal="up"] {
-  transform: translateY(22px) scale(0.985);
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(28px) scale(0.96);
   transition:
-    opacity 3000ms ease,
-    transform 3000ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 3000ms ease;
+    opacity 1.4s ease,
+    transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.4s ease;
+}
+
+.cover-lang-switch[data-reveal="up"].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0) scale(1);
 }
 
 .lang-button {
@@ -288,9 +407,11 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
   min-width: 72px;
   padding: 10px 18px;
   border-radius: 999px;
-  font: inherit;
-  font-size: 1.12rem;
-  letter-spacing: 0.18em;
+  font-family: var(--font-fr);
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   cursor: pointer;
   transition:
     transform 0.22s ease,
@@ -363,28 +484,384 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 }
 
 .details-card {
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap: clamp(8px, 1.4vh, 16px);
+  color: var(--ink);
+  text-align: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  padding-top: clamp(18px, 2.5vh, 28px);
+  padding-bottom: clamp(18px, 2.5vh, 28px);
+  overflow: hidden;
+}
+
+.details-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.2vw, 22px);
+  margin: 0 auto;
+  color: var(--ink);
+}
+
+.details-monogram-letter {
+  font-family: var(--font-fr);
+  font-size: clamp(2.4rem, 5.5vh, 3.8rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.details-monogram-divider {
+  width: 1px;
+  height: clamp(32px, 5vh, 48px);
+  background: var(--ink);
+}
+
+.details-rule {
+  width: min(120px, 28vw);
+  height: 1px;
+  margin: 2px auto;
+  background: var(--ink);
+  opacity: 0.85;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: clamp(10px, 2vw, 24px);
+  margin: 0 auto;
+  width: min(100%, 720px);
+}
+
+.family-divider {
+  width: 1px;
+  align-self: stretch;
+  min-height: 64px;
+  background: var(--ink);
+  opacity: 0.85;
+  justify-self: center;
+}
+
+.family-column {
+  font-size: clamp(0.92rem, 1.35vw, 1.12rem);
+  line-height: 1.45;
+  max-width: 280px;
+  justify-self: center;
+  text-align: center;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.family-column p {
+  margin: 0;
+}
+
+.family-column .family-role {
+  margin-bottom: 10px;
+  font-size: 0.78em;
+  letter-spacing: 0.14em;
+  font-weight: 400;
+}
+
+.family-column .family-given {
+  margin: 0;
+  font-weight: 500;
+}
+
+.family-column .family-surname {
+  margin: 6px 0 0;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.announcement,
+.schedule {
+  font-family: var(--font-fr);
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  line-height: 1.45;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.announcement {
+  margin: 0 auto;
+  max-width: 620px;
+}
+
+.announcement p + p {
+  margin-top: 6px;
+}
+
+.announcement p,
+.schedule p {
+  margin: 0;
+}
+
+.names-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-name {
+  margin: 0;
+  font-family: var(--font-fr);
+  font-size: clamp(1.9rem, 4.5vh, 3.2rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ampersand {
+  align-self: center;
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3vh, 2.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  transform: translateY(2px);
+}
+
+.schedule {
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.schedule p + p {
+  margin-top: 8px;
+}
+
+.schedule-note {
+  margin-top: 12px !important;
+  font-size: 0.82em;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+.thanks-block {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.thanks-title {
+  margin: 0 0 clamp(8px, 1.2vh, 14px);
+  font-family: var(--font-script);
+  font-size: clamp(2.1rem, 4.8vh, 3.4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.thanks-message {
+  margin: 0;
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.thanks-message-extra {
+  margin-top: 12px;
+}
+
+.thanks-message-extra[hidden] {
+  display: none;
+}
+
+.rsvp-card {
+  justify-content: center;
+  gap: 34px;
 }
 
 .cover-monogram.monogram {
-  width: min(clamp(280px, 34vw, 460px), 58vw);
-  height: min(clamp(420px, 52vw, 680px), 54vh);
+  width: min(clamp(170px, 28vw, 280px), 58vw);
+  height: auto;
+  aspect-ratio: 3244 / 1352;
   color: rgba(193, 149, 121, 0.92);
   margin: 0 auto;
   align-self: center;
-  transform: none;
+  flex-shrink: 0;
 }
 
-.cover-monogram.monogram[data-reveal="up"].is-visible {
-  transform: translate(0, 0) scale(1);
+.cover-monogram .monogram-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .cover-monogram.monogram[data-reveal="up"] {
-  transform: translateY(22px) scale(0.985);
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(36px) scale(0.94);
   transition:
-    opacity 3000ms ease,
-    transform 3000ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 3000ms ease;
+    opacity 1.7s ease,
+    transform 1.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.7s ease;
+}
+
+.cover-monogram.monogram[data-reveal="up"].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0) scale(1);
+}
+
+.cover-photo {
+  width: min(100%, 920px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cover-photo-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.cover-photo-trigger:disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .cover-photo-trigger {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.cover-photo-trigger img,
+.cover-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
+  transform: scale(0.9);
+  transform-origin: center top;
+}
+
+.cover-photo.is-expanded .cover-photo-trigger img {
+  opacity: 0;
+}
+
+.cover-photo[data-reveal="up"] {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(42px) scale(0.96);
+  transition:
+    opacity 1.8s ease,
+    transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.8s ease;
+}
+
+.cover-photo[data-reveal="up"].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0) scale(1);
+}
+
+.cover-photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  pointer-events: none;
+}
+
+.cover-photo-lightbox.is-open {
+  pointer-events: auto;
+}
+
+.cover-photo-lightbox[hidden] {
+  display: none;
+}
+
+.cover-photo-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: rgba(37, 28, 18, 0);
+  cursor: zoom-out;
+  transition: background 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cover-photo-lightbox.is-open .cover-photo-lightbox-backdrop {
+  background: rgba(37, 28, 18, 0.72);
+}
+
+.cover-photo-lightbox-image {
+  position: fixed;
+  z-index: 1;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform-origin: center center;
+  transition:
+    top 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    object-position 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: top, left, width, height;
+}
+
+.cover-photo-lightbox.is-open .cover-photo-lightbox-image {
+  object-fit: contain;
+  object-position: center center;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+  cursor: zoom-out;
+}
+
+body.photo-lightbox-open {
+  overflow: hidden;
 }
 
 .invitation-card::before,
@@ -420,216 +897,10 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
   letter-spacing: 0.01em;
 }
 
-.family-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: clamp(20px, 4vw, 46px);
-  margin-bottom: clamp(42px, 6vw, 68px);
-  width: min(100%, 840px);
-}
-
-.family-column {
-  font-size: clamp(1.05rem, 1.5vw, 1.5rem);
-  line-height: 1.54;
-  max-width: 250px;
-  justify-self: center;
-  text-align: center;
-}
-
-.family-column p {
-  margin: 0;
-}
-
-.family-column p + p {
-  margin-top: 10px;
-}
-
-.family-column .family-given {
-  margin: 0;
-}
-
-.family-column .family-surname {
-  margin: 6px 0 0;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-align: center;
-}
-
-.monogram {
-  position: relative;
-  width: clamp(84px, 11vw, 140px);
-  height: clamp(140px, 17vw, 210px);
-  color: rgba(193, 149, 121, 0.88);
-  justify-self: center;
-  transform: translateX(4%);
-}
-
-.monogram svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.monogram-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  filter: contrast(1.04);
-  backface-visibility: hidden;
-}
-
-.monogram-letter {
-  font-family: var(--font-fr);
-  font-size: 236px;
-  font-weight: 100;
-  line-height: 1;
-  fill: currentColor;
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: scaleX(0.84);
-}
-
-.monogram-letter-n,
-.monogram-letter-y {
-  letter-spacing: 0.01em;
-}
-
-.announcement,
-.invitation-line,
-.schedule,
-.venue {
-  font-size: clamp(1.25rem, 2vw, 2.05rem);
-  line-height: 1.1;
-}
-
-.announcement {
-  margin-bottom: clamp(38px, 5vw, 54px);
-  max-width: 620px;
-}
-
-.announcement p + p {
-  margin-top: 8px;
-}
-
-.announcement p,
-.invitation-line,
-.date-block p,
-.schedule p {
-  margin: 0;
-}
-
-.names-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: end;
-  gap: clamp(12px, 2vw, 24px);
-  max-width: 760px;
-  margin: 0 auto clamp(36px, 5vw, 56px);
-}
-
-.person {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.first-name {
-  margin: 0;
-  font-family: var(--font-fr);
-  font-size: clamp(4.4rem, 10vw, 7.2rem);
-  font-weight: 500;
-  line-height: 0.92;
-  color: #3e3a39;
-}
-
-.hebrew-name {
-  margin: 4px 0 0;
-  font-family: "Assistant", sans-serif;
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  color: var(--accent);
-  line-height: 1;
-}
-
-.hebrew-name:empty {
-  display: none;
-}
-
-.ampersand {
-  align-self: center;
-  font-family: var(--font-fr);
-  font-size: clamp(4.8rem, 8vw, 7rem);
-  line-height: 0.9;
-  color: #3e3a39;
-}
-
-.invitation-line {
-  margin-bottom: clamp(32px, 5vw, 44px);
-  max-width: 720px;
-}
-
-.date-block {
-  margin-bottom: clamp(42px, 6vw, 60px);
-  width: 100%;
-}
-
-.date {
-  font-size: clamp(2.2rem, 4.2vw, 4rem);
-  font-weight: 600;
-  line-height: 1.05;
-  color: var(--accent);
-  margin-bottom: 24px;
-  transform: translateY(-14px);
-}
-
-.venue {
-  font-size: clamp(1.25rem, 2vw, 2.05rem);
-  line-height: 1.08;
-}
-
-.venue-emphasis {
-  font-style: italic;
-}
-
-.waze-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 26px;
-  padding: 14px 30px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 1.15rem;
-  line-height: 1;
-  color: #fffdfb;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
-  box-shadow: 0 14px 30px rgba(145, 116, 96, 0.14);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-.waze-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 36px rgba(145, 116, 96, 0.18);
-  filter: brightness(1.02);
-}
-
-.schedule {
-  max-width: 700px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.schedule p + p {
-  margin-top: 8px;
-}
-
 .rsvp-card {
   justify-content: center;
   gap: 34px;
+  font-family: var(--font-fr);
 }
 
 .rsvp-header {
@@ -638,24 +909,34 @@ body.is-hebrew .intro-countdown-wrapper .countdown-value {
 }
 
 .rsvp-kicker {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
+  margin: 0 0 12px;
+  font-family: var(--font-fr);
+  font-size: clamp(0.92rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-deep);
 }
 
 .rsvp-title {
-  margin: 0 0 14px;
-  font-size: clamp(3.2rem, 6vw, 4.8rem);
+  margin: 0 0 16px;
+  font-family: var(--font-fr);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
   font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1;
   color: #3e3a39;
 }
 
 .rsvp-subtitle {
   margin: 0;
-  font-size: clamp(1.25rem, 2vw, 1.8rem);
-  line-height: 1.22;
+  font-family: var(--font-fr);
+  font-size: clamp(0.88rem, 1.3vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 body.is-hebrew .he-subtitle-split {
@@ -700,8 +981,12 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 .field-group > span,
 .field-group > legend {
   width: 100%;
-  font-size: 1.4rem;
-  line-height: 1.1;
+  font-family: var(--font-fr);
+  font-size: clamp(0.9rem, 1.35vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #4c4744;
   text-align: center;
 }
@@ -721,9 +1006,10 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   border: 1px solid rgba(201, 162, 135, 0.32);
   background: rgba(255, 255, 255, 0.72);
   color: #3e3a39;
-  font: inherit;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-family: var(--font-fr);
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
   padding: 16px 18px;
   border-radius: 18px;
   outline: none;
@@ -773,7 +1059,10 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   border: 1px solid rgba(201, 162, 135, 0.34);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.68);
-  font-size: 1.22rem;
+  font-family: var(--font-fr);
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -812,12 +1101,28 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   min-height: 112px;
 }
 
+.rsvp-countdown-wrapper .intro-countdown-title {
+  font-family: var(--font-fr);
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.rsvp-countdown-wrapper .countdown-label {
+  font-family: var(--font-fr);
+  letter-spacing: 0.12em;
+}
+
 .submit-button {
   border: 0;
   background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: white;
-  font: inherit;
-  font-size: 1.3rem;
+  font-family: var(--font-fr);
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   padding: 16px 40px;
   border-radius: 999px;
   cursor: pointer;
@@ -842,7 +1147,10 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 .form-feedback {
   min-height: 1.4em;
   margin: 0;
-  font-size: 1.2rem;
+  font-family: var(--font-fr);
+  font-size: clamp(0.88rem, 1.3vw, 1.02rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--accent);
   text-align: center;
 }
@@ -855,12 +1163,29 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
     transition: none;
   }
 
+  .cover-card,
+  .cover-lang-switch[data-reveal="up"],
+  .cover-monogram.monogram[data-reveal="up"],
+  .cover-photo[data-reveal="up"] {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
   .submit-button {
     transition: none;
   }
 
   .lang-button {
     transition: none;
+  }
+
+  .cover-photo-trigger img,
+  .cover-photo-lightbox-image,
+  .cover-photo-lightbox-backdrop {
+    transition: none !important;
+    animation: none !important;
   }
 }
 
@@ -877,66 +1202,46 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .cover-card {
     justify-content: center;
+    gap: clamp(22px, 4.5vh, 48px);
+    height: calc(100vh - 36px);
+    height: calc(100dvh - 36px);
+    min-height: calc(100vh - 36px);
+    min-height: calc(100dvh - 36px);
   }
 
   .details-card {
-    justify-content: space-between;
-  }
-
-  .family-grid {
-    width: min(100%, 760px);
-    gap: 30px;
-    margin-bottom: 44px;
+    justify-content: space-evenly;
+    gap: clamp(8px, 1.4vh, 16px);
+    height: calc(100vh - 36px);
+    height: calc(100dvh - 36px);
+    min-height: calc(100vh - 36px);
+    min-height: calc(100dvh - 36px);
   }
 
   .family-column {
     max-width: 215px;
-    font-size: 1.42rem;
-    line-height: 1.5;
+    font-size: clamp(0.92rem, 1.35vw, 1.12rem);
+    line-height: 1.45;
   }
 
   .announcement {
     max-width: 660px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .names-row {
     max-width: 700px;
     gap: 18px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
   }
 
   .first-name {
-    font-size: 5.85rem;
-  }
-
-  .hebrew-name {
-    font-size: 1.65rem;
+    font-size: clamp(1.9rem, 4.5vh, 3rem);
   }
 
   .announcement,
-  .invitation-line,
-  .schedule,
-  .venue {
-    font-size: 1.72rem;
-    line-height: 1.14;
-  }
-
-  .invitation-line {
-    max-width: 760px;
-    margin-bottom: 32px;
-  }
-
-  .date-block {
-    margin-bottom: 40px;
-  }
-
-  .date {
-    font-size: 3.15rem;
-  }
-
   .schedule {
-    max-width: 760px;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
   }
 
   .rsvp-card {
@@ -961,60 +1266,47 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .cover-card {
     min-height: calc(100vh - 24px);
+    min-height: calc(100dvh - 24px);
+    height: calc(100vh - 24px);
+    height: calc(100dvh - 24px);
   }
 
   .details-card {
-    justify-content: space-between;
-  }
-
-  .family-grid {
-    width: min(100%, 720px);
-    gap: 42px;
-    margin-bottom: 62px;
+    justify-content: space-evenly;
+    gap: clamp(6px, 1.2vh, 12px);
+    height: calc(100vh - 24px);
+    height: calc(100dvh - 24px);
+    min-height: calc(100vh - 24px);
+    min-height: calc(100dvh - 24px);
   }
 
   .family-column {
-    max-width: 205px;
-    font-size: 1.42rem;
-    line-height: 1.58;
-  }
-
-  .family-column p + p {
-    margin-top: 12px;
+    max-width: 220px;
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .announcement {
-    margin-bottom: 56px;
-  }
-
-  .announcement p + p {
-    margin-top: 10px;
+    margin-bottom: 0;
   }
 
   .names-row {
     max-width: 680px;
-    gap: 22px;
-    margin: 0 auto 58px;
+    gap: 16px;
+    margin: 0 auto;
   }
 
   .first-name {
-    font-size: 5.45rem;
-  }
-
-  .hebrew-name {
-    font-size: 1.56rem;
+    font-size: clamp(2.4rem, 4.5vw, 3.2rem);
   }
 
   .announcement,
-  .invitation-line,
-  .schedule,
-  .venue {
-    font-size: 1.68rem;
-    line-height: 1.22;
+  .schedule {
+    font-size: clamp(0.92rem, 1.3vw, 1.1rem);
   }
 
-  .invitation-line {
-    margin-bottom: 46px;
+  .first-name {
+    font-size: clamp(1.7rem, 4vh, 2.4rem);
   }
 
   .date-block {
@@ -1043,23 +1335,43 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .cover-card {
     min-height: 100vh;
-    padding: 0 18px 24px;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    padding: max(16px, env(safe-area-inset-top)) 16px 16px;
+    gap: clamp(18px, 3.5vh, 28px);
+    justify-content: center;
+    align-items: center;
   }
 
   .cover-lang-switch {
-    margin-top: clamp(-96px, -16vh, -64px);
-    margin-bottom: clamp(10px, 2.5vw, 16px);
-    gap: 14px;
+    margin: 0;
+    gap: 12px;
+  }
+
+  .cover-monogram.monogram {
+    margin: 0 auto;
   }
 
   .cover-card .lang-button {
-    min-width: 88px;
-    padding: 13px 24px;
-    font-size: 1.22rem;
-    letter-spacing: 0.16em;
+    min-width: 72px;
+    padding: 10px 18px;
+    font-size: 1.08rem;
+    letter-spacing: 0.14em;
   }
 
-  .details-card,
+  .details-card {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    gap: 8px;
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: 16px;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
   .rsvp-card {
     min-height: auto;
   }
@@ -1102,75 +1414,142 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
     font-size: 0.95rem;
   }
 
-  .details-card {
-    justify-content: space-between;
+  body.is-hebrew .thanks-message,
+  body.is-hebrew .thanks-message-extra {
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  body.is-hebrew .thanks-title {
+    font-size: 2.1rem;
+    margin-bottom: 6px;
+  }
+
+  body.is-hebrew .announcement,
+  body.is-hebrew .schedule {
+    font-size: 1.08rem;
+  }
+
+  body.is-hebrew .family-column {
+    font-size: 0.95rem;
+  }
+
+  .details-monogram-letter {
+    font-size: 2.2rem;
+  }
+
+  .first-name {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+    letter-spacing: 0.16em;
+  }
+
+  body.is-hebrew .first-name {
+    font-size: 1.55rem;
+  }
+
+  .thanks-title {
+    font-size: 2.1rem;
+    margin-bottom: 6px;
+  }
+
+  .announcement,
+  .schedule {
+    font-size: 0.95rem;
   }
 
   .names-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+  }
+
+  .ampersand {
+    font-size: 1.5rem;
   }
 
   .family-grid {
     grid-template-columns: 1fr auto 1fr;
-    gap: 14px;
-    margin-bottom: 42px;
+    gap: 12px;
+    margin-bottom: 0;
     width: min(100%, 100%);
-    align-items: center;
-  }
-
-  .monogram {
-    margin: 0 auto;
-    width: 78px;
-    height: 122px;
-  }
-
-  .cover-monogram.monogram {
-    width: min(210px, 54vw);
-    height: min(315px, 44vh);
-    font-size: 12.2rem;
-  }
-
-  .ampersand {
-    margin: -2px 0 2px;
+    align-items: start;
   }
 
   .family-column {
-    font-size: 1.08rem;
-    line-height: 1.34;
-    max-width: 132px;
+    font-size: 0.78rem;
+    max-width: 140px;
+  }
+
+  .cover-monogram.monogram {
+    width: min(170px, 50vw);
+    height: auto;
+    aspect-ratio: 3244 / 1352;
+    margin: 0 auto;
+  }
+
+  .cover-photo {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cover-photo-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-height: 100%;
+  }
+
+  .cover-photo img,
+  .cover-photo-trigger img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center center;
+    transform: none;
+  }
+
+  .ampersand {
+    margin: 0;
+  }
+
+  .family-column {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    max-width: 140px;
   }
 
   .announcement {
-    margin-bottom: 42px;
+    margin-bottom: 0;
   }
 
   .announcement,
-  .invitation-line,
-  .schedule,
-  .venue {
-    font-size: 1.56rem;
-    line-height: 1.16;
+  .schedule {
+    font-size: 0.88rem;
+    line-height: 1.4;
   }
 
   .names-row {
-    gap: 10px;
-    margin: 0 auto 42px;
+    gap: 8px;
+    margin: 0 auto;
   }
 
   .first-name {
-    font-size: 5.1rem;
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 
-  .hebrew-name {
-    font-size: 1.5rem;
+  .thanks-title {
+    font-size: 2.1rem;
+    margin-bottom: 6px;
   }
 
-  .invitation-line {
-    margin-bottom: 34px;
-  }
-
-  .date-block {
-    margin-bottom: 42px;
+  .details-monogram-letter {
+    font-size: 2.2rem;
   }
 
   .date {
@@ -1187,12 +1566,13 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   }
 
   .rsvp-title {
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    letter-spacing: 0.18em;
   }
 
   .rsvp-subtitle {
-    font-size: 1.42rem;
-    line-height: 1.28;
+    font-size: 0.88rem;
+    line-height: 1.45;
   }
 
   .rsvp-form {
@@ -1217,12 +1597,12 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 
   .field-group > span,
   .field-group > legend {
-    font-size: 1.3rem;
+    font-size: 0.92rem;
   }
 
   .field-group input,
   .field-group textarea {
-    font-size: 1.18rem;
+    font-size: 1rem;
     padding: 17px 18px;
   }
 
@@ -1235,7 +1615,7 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
   .choice-pill span {
     min-width: 96px;
     padding: 13px 20px;
-    font-size: 1.16rem;
+    font-size: 0.92rem;
   }
 
   .field-small {
@@ -1254,14 +1634,27 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 }
 
 @media (max-width: 556px) {
+  .cover-card {
+    padding: max(14px, env(safe-area-inset-top)) 14px 14px;
+    gap: clamp(16px, 3.2vh, 24px);
+    justify-content: center;
+  }
+
   .cover-lang-switch {
-    margin-top: clamp(-120px, -18vh, -80px);
+    margin: 0;
   }
 
   .cover-card .lang-button {
-    min-width: 92px;
-    padding: 14px 26px;
-    font-size: 1.28rem;
+    min-width: 70px;
+    padding: 10px 16px;
+    font-size: 1.05rem;
+  }
+
+  .cover-monogram.monogram {
+    width: min(150px, 46vw);
+    height: auto;
+    aspect-ratio: 3244 / 1352;
+    margin: 0 auto;
   }
 
   .intro-countdown-title {
@@ -1322,8 +1715,21 @@ body.is-hebrew .he-subtitle-split__line + .he-subtitle-split__line {
 }
 
 @media (max-width: 370px) {
+  .cover-card {
+    gap: 16px;
+  }
+
   .cover-monogram.monogram {
-    width: min(160px, 50vw);
-    height: min(240px, 36vh);
+    width: min(140px, 44vw);
+    height: auto;
+    aspect-ratio: 3244 / 1352;
+    margin: 0 auto;
+  }
+
+  .cover-photo img,
+  .cover-photo-trigger img {
+    object-fit: contain;
+    object-position: center top;
+    transform: none;
   }
 }

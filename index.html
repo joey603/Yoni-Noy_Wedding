@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="page">
-      <section class="invitation-card cover-card" aria-label="Couverture du faire-part">
+      <section class="invitation-card cover-card" aria-label="Couverture du faire-part" data-cover-enter>
         <div
           class="intro-lang-switch cover-lang-switch"
           role="group"
@@ -32,79 +32,83 @@
         >
           <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
         </div>
+
+        <figure class="cover-photo" data-reveal="up">
+          <button
+            type="button"
+            class="cover-photo-trigger"
+            id="cover-photo-trigger"
+            aria-label="Agrandir la photo"
+            aria-haspopup="dialog"
+            aria-controls="cover-photo-lightbox"
+          >
+            <img
+              src="./assets/cover-photo-full.jpg"
+              alt="Photo des enfants d'honneur"
+              width="768"
+              height="1024"
+              decoding="async"
+            />
+          </button>
+        </figure>
       </section>
 
       <section class="invitation-card details-card">
-        <div class="family-grid">
-          <div class="family-column" data-family-column="noy" data-reveal="left">
-            <p>Mr &amp; Mme grand parent maternel Noy</p>
-            <p>Mr &amp; Mme grand parent paternel Noy</p>
-            <p>Mr &amp; Mme parent Noy</p>
-          </div>
-
-          <div class="monogram" aria-label="Monogramme Noy et Yoni" data-reveal="up">
-            <img class="monogram-image" src="./assets/monogram-ny.png" alt="" aria-hidden="true" />
-          </div>
-
-          <div class="family-column" data-family-column="yoni" data-reveal="right">
-            <p>Mr &amp; Mme grand parent maternel Yoni</p>
-            <p>Mr &amp; Mme grand parent paternel Yoni</p>
-            <p>Mr &amp; Mme parent Yoni</p>
-          </div>
-        </div>
-
-        <div class="announcement" id="announcement-text" data-reveal="up">
-          <p>Ont la joie de vous faire part du mariage</p>
+        <div class="details-monogram" aria-label="Monogramme Noy et Yoni" data-reveal="up">
+          <span class="details-monogram-letter">N</span>
+          <span class="details-monogram-divider" aria-hidden="true"></span>
+          <span class="details-monogram-letter">Y</span>
         </div>
 
         <div class="names-row" data-reveal="up">
           <div class="person" data-reveal="left">
-            <h1 class="first-name" id="first-name-noy">Noy</h1>
-            <p class="hebrew-name" id="secondary-name-noy" lang="he" dir="rtl"></p>
+            <h1 class="first-name" id="first-name-noy">NOY</h1>
           </div>
 
-          <div class="ampersand" id="names-separator">&amp;</div>
+          <div class="ampersand" id="names-separator">and&nbsp;&nbsp;</div>
 
           <div class="person" data-reveal="right">
-            <h1 class="first-name" id="first-name-yoni">Yoni</h1>
-            <p class="hebrew-name" id="secondary-name-yoni" lang="he" dir="rtl"></p>
+            <h1 class="first-name" id="first-name-yoni">YONI</h1>
           </div>
         </div>
 
-        <p
-          class="hebrew-couple-names"
-          id="hebrew-couple-names"
-          data-reveal="up"
-          lang="he"
-          dir="rtl"
-        >
-          יוני ונוי
-        </p>
-
-        <p class="invitation-line" id="invitation-line" data-reveal="left">
-          Et vous prient de bien vouloir les honorer de votre presence le
-        </p>
-
-        <div class="date-block" data-reveal="up">
-          <p class="date date-hebrew" id="event-date-hebrew" lang="he" dir="rtl"></p>
-          <p class="date" id="event-date">Lundi 07 Septembre 2026</p>
-          <p class="venue venue-emphasis" id="venue-name">Hôtel Logos</p>
-          <p class="venue" id="venue-location">Yad HaShmona, Israël</p>
-          <a
-            class="waze-button"
-            id="waze-link"
-            href="https://www.waze.com/ul?q=H%C3%B4tel%20Logos%2C%20Yad%20HaShmona%2C%20Isra%C3%ABl&navigate=yes"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ouvrir dans Waze
-          </a>
+        <div class="announcement" id="announcement-text" data-reveal="up">
+          <p>Ont le plaisir de vous inviter</p>
+          <p>à célébrer leur mariage</p>
         </div>
 
-        <div class="schedule" id="schedule-text" data-reveal="right">
-          <p>Le cocktail debutera a 18h00</p>
-          <p>La ceremonie religieuse se tiendra a 20h30</p>
-          <p>et sera suivie de la reception</p>
+        <div class="details-rule" aria-hidden="true" data-reveal="up"></div>
+
+        <div class="schedule" id="schedule-text" data-reveal="up">
+          <p>Accueil à 17h30</p>
+          <p>Cérémonie à 18h30</p>
+          <p class="schedule-note">La cérémonie commencera à l'heure</p>
+        </div>
+
+        <div class="details-rule" aria-hidden="true" data-reveal="up"></div>
+
+        <div class="family-grid" data-reveal="up">
+          <div class="family-column" data-family-column="noy" data-reveal="left">
+            <p class="family-role">Parents de la mariée</p>
+            <p class="family-given">Yossi &amp; Tsipi</p>
+            <p class="family-surname">Avidan</p>
+          </div>
+
+          <div class="family-divider" aria-hidden="true"></div>
+
+          <div class="family-column" data-family-column="yoni" data-reveal="right">
+            <p class="family-role">Parents du marié</p>
+            <p class="family-given">Yohan &amp; Véronique</p>
+            <p class="family-surname">Assouline</p>
+          </div>
+        </div>
+
+        <div class="thanks-block" data-reveal="up">
+          <p class="thanks-title" id="thanks-title">Thank You</p>
+          <p class="thanks-message" id="thanks-message">
+            Nous vous remercions du fond du cœur d'être présents en ce jour si spécial et pour tout votre amour et soutien.
+          </p>
+          <p class="thanks-message thanks-message-extra" id="thanks-message-extra" hidden></p>
         </div>
       </section>
 
@@ -209,6 +213,25 @@
       </section>
     </main>
 
+    <div
+      class="cover-photo-lightbox"
+      id="cover-photo-lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo agrandie"
+    >
+      <button type="button" class="cover-photo-lightbox-backdrop" id="cover-photo-lightbox-close" aria-label="Fermer"></button>
+      <img
+        class="cover-photo-lightbox-image"
+        src="./assets/cover-photo-full.jpg"
+        alt="Photo des enfants d'honneur"
+        width="768"
+        height="1024"
+        decoding="async"
+      />
+    </div>
+
     <script>
       const langButtons = document.querySelectorAll(".lang-button");
       const countdownTitle = document.getElementById("intro-countdown-title");
@@ -228,17 +251,11 @@
       const announcementText = document.getElementById("announcement-text");
       const firstNameNoy = document.getElementById("first-name-noy");
       const firstNameYoni = document.getElementById("first-name-yoni");
-      const secondaryNameNoy = document.getElementById("secondary-name-noy");
-      const secondaryNameYoni = document.getElementById("secondary-name-yoni");
       const namesSeparator = document.getElementById("names-separator");
-      const invitationLine = document.getElementById("invitation-line");
-      const hebrewCoupleNames = document.getElementById("hebrew-couple-names");
-      const eventDateHebrew = document.getElementById("event-date-hebrew");
-      const eventDate = document.getElementById("event-date");
-      const venueName = document.getElementById("venue-name");
-      const venueLocation = document.getElementById("venue-location");
-      const wazeLink = document.getElementById("waze-link");
       const scheduleText = document.getElementById("schedule-text");
+      const thanksTitle = document.getElementById("thanks-title");
+      const thanksMessage = document.getElementById("thanks-message");
+      const thanksMessageExtra = document.getElementById("thanks-message-extra");
       const rsvpKicker = document.getElementById("rsvp-kicker");
       const rsvpTitle = document.getElementById("rsvp-title");
       const rsvpSubtitle = document.getElementById("rsvp-subtitle");
@@ -257,10 +274,11 @@
       const revealItems = document.querySelectorAll("[data-reveal]");
       const coverMonogram = document.querySelector(".cover-monogram[data-reveal]");
       const coverLangSwitch = document.querySelector(".cover-lang-switch[data-reveal]");
+      const coverPhoto = document.querySelector(".cover-photo[data-reveal]");
       const deferredRevealItems = Array.from(revealItems).filter(
-        (item) => item !== coverMonogram && item !== coverLangSwitch
+        (item) => item !== coverMonogram && item !== coverLangSwitch && item !== coverPhoto
       );
-      const weddingDate = new Date("2026-09-07T20:30:00");
+      const weddingDate = new Date("2026-09-07T18:30:00");
       let currentLang = "fr";
       let revealStarted = false;
       let coverMonogramRevealed = false;
@@ -268,31 +286,37 @@
       const pageTranslations = {
         fr: {
           families: {
-            noy: ["Yoseph et Tsipora", "Avidan"],
-            yoni: ["Yohan et Veronique", "Assouline"],
+            noy: {
+              role: "Parents de la mariée",
+              given: "Yossi & Tsipi",
+              surname: "Avidan",
+            },
+            yoni: {
+              role: "Parents du marié",
+              given: "Yohan & Véronique",
+              surname: "Assouline",
+            },
           },
-          announcement: ["Ont la joie de vous faire part du mariage"],
-          names: {
-            noy: "Noy",
-            yoni: "Yoni",
-            secondaryNoy: "",
-            secondaryYoni: "",
-            separator: "&",
-          },
-          coupleNamesLine: "",
-          invitationLine: "Et vous prient de bien vouloir les honorer de votre presence le",
-          eventDateHebrew: "",
-          eventDate: "Lundi 07 Septembre 2026",
-          venueName: "Hôtel Logos",
-          venueLocation: "Yad HaShmona, Israël",
-          wazeLabel: "Ouvrir dans Waze",
-          wazeHref:
-            "https://www.waze.com/ul?q=H%C3%B4tel%20Logos%2C%20Yad%20HaShmona%2C%20Isra%C3%ABl&navigate=yes",
-          schedule: [
-            "Le cocktail debutera a 18h00",
-            "La ceremonie religieuse se tiendra a 20h30",
-            "et sera suivie de la reception",
+          announcement: [
+            "Ont le plaisir de vous inviter",
+            "à célébrer leur mariage",
           ],
+          names: {
+            noy: "NOY",
+            yoni: "YONI",
+            separator: "and\u00A0\u00A0",
+          },
+          schedule: [
+            "Accueil à 17h30",
+            "Cérémonie à 18h30",
+            { text: "La cérémonie commencera à l'heure", note: true },
+          ],
+          thanks: {
+            title: "Thank You",
+            message:
+              "Nous vous remercions du fond du cœur d'être présents en ce jour si spécial et pour tout votre amour et soutien.",
+            messageExtra: "",
+          },
           countdown: {
             title: "Compte a rebours jusqu'au mariage",
             labels: {
@@ -326,27 +350,34 @@
         },
         he: {
           families: {
-            noy: ["ציפי ויוסי", "אבידן"],
-            yoni: ["יוהן וורוניק", "אסולין"],
+            noy: {
+              role: "הורי הכלה",
+              given: "יוסי וציפי",
+              surname: "אבידן",
+            },
+            yoni: {
+              role: "הורי החתן",
+              given: "יוהן וורוניק",
+              surname: "אסולין",
+            },
           },
-          announcement: ["שמחים להזמינכם לחתונה של"],
+          announcement: ["מתכבדים להזמינכם לחגוג עמנו", "את יום נישואינו"],
           names: {
-            noy: "נוי",
-            yoni: "יוני",
-            secondaryNoy: "",
-            secondaryYoni: "",
-            separator: "ו",
+            noy: "NOY",
+            yoni: "YONI",
+            separator: "and\u00A0\u00A0",
           },
-          coupleNamesLine: "יוני ונוי",
-          invitationLine: "שתתקיים ביום שני",
-          eventDateHebrew: "כ׳ה אלול תשפ״ו",
-          eventDate: "7 בספטמבר 2026",
-          venueName: "במלון לוגוס, יד השמונה",
-          venueLocation: "",
-          wazeLabel: "פתיחה ב-Waze",
-          wazeHref:
-            "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
-          schedule: ["קבלת הפנים תחל בשעה 18:00", "טקס החופה יתקיים בשעה 20:30"],
+          schedule: [
+            "קבלת פנים 17:30",
+            "חופה 18:30",
+            { text: "החופה תחל בזמן", note: true },
+          ],
+          thanks: {
+            title: "Thank You",
+            message: "אנו מודים לכם על הגעתכם, על אהבתכם ותמיכתכם.",
+            messageExtra:
+              "אנחנו מתרגשים לחלוק איתכם רגע של אהבה, ומזמינים אתכם להיות איתנו בו באמת. את הצילום בחופה השאירו לצלמים שלנו❤️.",
+          },
           countdown: {
             title: "הספירה לאחור ",
             labels: {
@@ -446,31 +477,27 @@
           button.classList.toggle("is-active", button.dataset.lang === lang);
         });
 
-        const renderFamily = (pair) =>
-          `<p class="family-given">${pair[0]}</p><p class="family-surname">${pair[1]}</p>`;
+        const renderFamily = (family) =>
+          `<p class="family-role">${family.role}</p><p class="family-given">${family.given}</p><p class="family-surname">${family.surname}</p>`;
         familyColumns.noy.innerHTML = renderFamily(pageCopy.families.noy);
         familyColumns.yoni.innerHTML = renderFamily(pageCopy.families.yoni);
         announcementText.innerHTML = pageCopy.announcement.map((line) => `<p>${line}</p>`).join("");
         firstNameNoy.textContent = pageCopy.names.noy;
         firstNameYoni.textContent = pageCopy.names.yoni;
-        secondaryNameNoy.textContent = pageCopy.names.secondaryNoy;
-        secondaryNameYoni.textContent = pageCopy.names.secondaryYoni;
-        secondaryNameNoy.lang = lang === "he" ? "fr" : "he";
-        secondaryNameYoni.lang = lang === "he" ? "fr" : "he";
-        secondaryNameNoy.dir = lang === "he" ? "ltr" : "rtl";
-        secondaryNameYoni.dir = lang === "he" ? "ltr" : "rtl";
         namesSeparator.textContent = pageCopy.names.separator;
-        if (hebrewCoupleNames) {
-          hebrewCoupleNames.textContent = pageCopy.coupleNamesLine || "";
+        scheduleText.innerHTML = pageCopy.schedule
+          .map((line) => {
+            if (typeof line === "string") return `<p>${line}</p>`;
+            return `<p class="schedule-note">${line.text}</p>`;
+          })
+          .join("");
+        if (thanksTitle) thanksTitle.textContent = pageCopy.thanks.title;
+        if (thanksMessage) thanksMessage.textContent = pageCopy.thanks.message;
+        if (thanksMessageExtra) {
+          const extra = pageCopy.thanks.messageExtra || "";
+          thanksMessageExtra.textContent = extra;
+          thanksMessageExtra.hidden = !extra;
         }
-        invitationLine.textContent = pageCopy.invitationLine;
-        eventDateHebrew.textContent = pageCopy.eventDateHebrew || "";
-        eventDate.textContent = pageCopy.eventDate;
-        venueName.textContent = pageCopy.venueName;
-        venueLocation.textContent = pageCopy.venueLocation;
-        wazeLink.textContent = pageCopy.wazeLabel;
-        wazeLink.href = pageCopy.wazeHref;
-        scheduleText.innerHTML = pageCopy.schedule.map((line) => `<p>${line}</p>`).join("");
         rsvpKicker.textContent = pageCopy.rsvp.kicker;
         rsvpTitle.textContent = pageCopy.rsvp.title;
         if (pageCopy.rsvp.subtitleHtml) {
@@ -538,16 +565,31 @@
       function revealCoverElements() {
         if (coverMonogramRevealed) return;
         coverMonogramRevealed = true;
-        coverLangSwitch?.classList.add("is-visible");
-        coverMonogram?.classList.add("is-visible");
+
+        const coverCard = document.querySelector(".cover-card[data-cover-enter]");
+        coverCard?.classList.add("is-entering");
+
+        window.setTimeout(() => {
+          coverLangSwitch?.classList.add("is-visible");
+        }, 180);
+
+        window.setTimeout(() => {
+          coverMonogram?.classList.add("is-visible");
+        }, 420);
+
+        window.setTimeout(() => {
+          coverPhoto?.classList.add("is-visible");
+        }, 780);
       }
 
       updatePageLanguage("fr");
       updateCountdown();
       setInterval(updateCountdown, 1000);
       window.requestAnimationFrame(() => {
-        revealCoverElements();
-        startRevealAnimations();
+        window.requestAnimationFrame(() => {
+          revealCoverElements();
+          startRevealAnimations();
+        });
       });
 
       langButtons.forEach((button) => {
@@ -555,6 +597,153 @@
           updatePageLanguage(button.dataset.lang);
         });
       });
+
+      const coverPhotoTrigger = document.getElementById("cover-photo-trigger");
+      const coverPhotoLightbox = document.getElementById("cover-photo-lightbox");
+      const coverPhotoLightboxClose = document.getElementById("cover-photo-lightbox-close");
+      const coverPhotoLightboxImage = coverPhotoLightbox?.querySelector(
+        ".cover-photo-lightbox-image"
+      );
+      const coverPhotoFigure = document.querySelector(".cover-photo");
+      const coverPhotoDesktopQuery = window.matchMedia("(min-width: 1101px)");
+      let coverPhotoLockedOpen = false;
+      let coverPhotoAnimating = false;
+      let coverPhotoCloseTimer = 0;
+      const coverPhotoAnimMs = 550;
+
+      function canUseCoverPhotoLightbox() {
+        return coverPhotoDesktopQuery.matches;
+      }
+
+      function syncCoverPhotoTriggerState() {
+        if (!coverPhotoTrigger) return;
+        const enabled = canUseCoverPhotoLightbox();
+        coverPhotoTrigger.disabled = !enabled;
+        coverPhotoTrigger.setAttribute("aria-disabled", enabled ? "false" : "true");
+        coverPhotoTrigger.tabIndex = enabled ? 0 : -1;
+        if (!enabled) {
+          closeCoverPhotoLightbox({ force: true });
+        }
+      }
+
+      function getCoverPhotoOriginRect() {
+        const source = coverPhotoTrigger?.querySelector("img") || coverPhotoTrigger;
+        return source.getBoundingClientRect();
+      }
+
+      function getCoverPhotoTargetRect() {
+        const maxWidth = Math.min(window.innerWidth * 0.92, 860);
+        const maxHeight = window.innerHeight * 0.9;
+        const naturalRatio = 768 / 1024;
+        let width = maxWidth;
+        let height = width / naturalRatio;
+
+        if (height > maxHeight) {
+          height = maxHeight;
+          width = height * naturalRatio;
+        }
+
+        return {
+          top: (window.innerHeight - height) / 2,
+          left: (window.innerWidth - width) / 2,
+          width,
+          height,
+        };
+      }
+
+      function placeCoverPhotoImage(rect) {
+        if (!coverPhotoLightboxImage) return;
+        coverPhotoLightboxImage.style.top = `${rect.top}px`;
+        coverPhotoLightboxImage.style.left = `${rect.left}px`;
+        coverPhotoLightboxImage.style.width = `${rect.width}px`;
+        coverPhotoLightboxImage.style.height = `${rect.height}px`;
+      }
+
+      function openCoverPhotoLightbox() {
+        if (!canUseCoverPhotoLightbox()) return;
+        if (!coverPhotoLightbox || !coverPhotoLightboxImage || !coverPhotoTrigger) return;
+        if (coverPhotoLightbox.classList.contains("is-open") && !coverPhotoAnimating) {
+          return;
+        }
+
+        window.clearTimeout(coverPhotoCloseTimer);
+        const origin = getCoverPhotoOriginRect();
+        const target = getCoverPhotoTargetRect();
+
+        coverPhotoLightbox.hidden = false;
+        coverPhotoLightbox.classList.remove("is-open");
+        placeCoverPhotoImage(origin);
+        coverPhotoFigure?.classList.add("is-expanded");
+        document.body.classList.add("photo-lightbox-open");
+        coverPhotoAnimating = true;
+        coverPhotoLockedOpen = true;
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            coverPhotoLightbox.classList.add("is-open");
+            placeCoverPhotoImage(target);
+          });
+        });
+
+        window.setTimeout(() => {
+          coverPhotoAnimating = false;
+        }, coverPhotoAnimMs);
+      }
+
+      function closeCoverPhotoLightbox({ force = false } = {}) {
+        if (!coverPhotoLightbox || !coverPhotoLightboxImage) return;
+        if (coverPhotoLockedOpen && !force) return;
+        if (coverPhotoLightbox.hidden) return;
+
+        window.clearTimeout(coverPhotoCloseTimer);
+        const origin = getCoverPhotoOriginRect();
+        coverPhotoAnimating = true;
+        coverPhotoLightbox.classList.remove("is-open");
+        placeCoverPhotoImage(origin);
+
+        coverPhotoCloseTimer = window.setTimeout(() => {
+          coverPhotoLightbox.hidden = true;
+          coverPhotoFigure?.classList.remove("is-expanded");
+          document.body.classList.remove("photo-lightbox-open");
+          coverPhotoLockedOpen = false;
+          coverPhotoAnimating = false;
+          coverPhotoLightboxImage.style.top = "";
+          coverPhotoLightboxImage.style.left = "";
+          coverPhotoLightboxImage.style.width = "";
+          coverPhotoLightboxImage.style.height = "";
+        }, coverPhotoAnimMs);
+      }
+
+      coverPhotoTrigger?.addEventListener("click", () => {
+        if (!canUseCoverPhotoLightbox()) return;
+        if (coverPhotoLockedOpen || coverPhotoLightbox?.classList.contains("is-open")) {
+          closeCoverPhotoLightbox({ force: true });
+          return;
+        }
+        openCoverPhotoLightbox();
+      });
+
+      coverPhotoLightboxImage?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        closeCoverPhotoLightbox({ force: true });
+      });
+
+      coverPhotoLightboxClose?.addEventListener("click", () => {
+        closeCoverPhotoLightbox({ force: true });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeCoverPhotoLightbox({ force: true });
+        }
+      });
+
+      syncCoverPhotoTriggerState();
+      if (typeof coverPhotoDesktopQuery.addEventListener === "function") {
+        coverPhotoDesktopQuery.addEventListener("change", syncCoverPhotoTriggerState);
+      } else {
+        coverPhotoDesktopQuery.addListener(syncCoverPhotoTriggerState);
+      }
 
       rsvpForm.addEventListener("submit", (event) => {
         event.preventDefault();
