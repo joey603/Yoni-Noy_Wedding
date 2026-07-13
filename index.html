@@ -493,7 +493,21 @@
         }
       }
 
-      function updatePageLanguage(lang) {
+      function getLangFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const lang = (params.get("lang") || "").toLowerCase().trim();
+        if (lang === "he" || lang === "heb" || lang === "iw") return "he";
+        if (lang === "fr" || lang === "francais" || lang === "français") return "fr";
+        return null;
+      }
+
+      function syncLangToUrl(lang) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+      }
+
+      function updatePageLanguage(lang, { syncUrl = true } = {}) {
         currentLang = lang;
         const pageCopy = pageTranslations[lang];
         countdownTitle.textContent = pageCopy.countdown.title;
@@ -570,6 +584,10 @@
         if (feedback.textContent.trim()) {
           feedback.textContent = pageCopy.rsvp.feedback;
         }
+
+        if (syncUrl) {
+          syncLangToUrl(lang);
+        }
       }
 
       function updateCountdown() {
@@ -627,7 +645,8 @@
         }, 780);
       }
 
-      updatePageLanguage("fr");
+      const initialLang = getLangFromUrl() || "fr";
+      updatePageLanguage(initialLang);
       updateCountdown();
       setInterval(updateCountdown, 1000);
       window.requestAnimationFrame(() => {
@@ -641,6 +660,10 @@
         button.addEventListener("click", () => {
           updatePageLanguage(button.dataset.lang);
         });
+      });
+
+      window.addEventListener("popstate", () => {
+        updatePageLanguage(getLangFromUrl() || "fr", { syncUrl: false });
       });
 
       const coverPhotoTrigger = document.getElementById("cover-photo-trigger");
