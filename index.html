@@ -77,6 +77,11 @@
           <p>à célébrer leur mariage</p>
         </div>
 
+        <div class="date-block" data-reveal="up">
+          <p class="date date-hebrew" id="event-date-hebrew" lang="he" dir="rtl"></p>
+          <p class="date" id="event-date">Lundi 07 Septembre 2026</p>
+        </div>
+
         <div class="details-rule" aria-hidden="true" data-reveal="up"></div>
 
         <div class="schedule" id="schedule-text" data-reveal="up">
@@ -264,6 +269,8 @@
       const firstNameNoy = document.getElementById("first-name-noy");
       const firstNameYoni = document.getElementById("first-name-yoni");
       const namesSeparator = document.getElementById("names-separator");
+      const eventDate = document.getElementById("event-date");
+      const eventDateHebrew = document.getElementById("event-date-hebrew");
       const scheduleText = document.getElementById("schedule-text");
       const venueName = document.getElementById("venue-name");
       const wazeLink = document.getElementById("waze-link");
@@ -320,6 +327,8 @@
             yoni: "YONI",
             separator: "and\u00A0\u00A0",
           },
+          eventDateHebrew: "",
+          eventDate: "Lundi 07 Septembre 2026",
           venueName: "Hôtel Logos, Yad HaShmona",
           wazeHref:
             "https://www.waze.com/ul?q=H%C3%B4tel%20Logos%2C%20Yad%20HaShmona%2C%20Isra%C3%ABl&navigate=yes",
@@ -385,6 +394,8 @@
             yoni: "YONI",
             separator: "and\u00A0\u00A0",
           },
+          eventDateHebrew: "כ׳ה אלול תשפ״ו",
+          eventDate: "7 בספטמבר 2026",
           venueName: "מלון לוגוס, יד שמונה",
           wazeHref:
             "https://www.waze.com/ul?q=%D7%9E%D7%9C%D7%95%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%D7%A1%2C%20%D7%99%D7%93%20%D7%94%D7%A9%D7%9E%D7%95%D7%A0%D7%94&navigate=yes",
@@ -506,6 +517,12 @@
         firstNameNoy.textContent = pageCopy.names.noy;
         firstNameYoni.textContent = pageCopy.names.yoni;
         namesSeparator.textContent = pageCopy.names.separator;
+        if (eventDateHebrew) {
+          eventDateHebrew.textContent = pageCopy.eventDateHebrew || "";
+        }
+        if (eventDate) {
+          eventDate.textContent = pageCopy.eventDate;
+        }
         if (venueName) {
           venueName.textContent = pageCopy.venueName;
           venueName.setAttribute("dir", lang === "he" ? "rtl" : "ltr");

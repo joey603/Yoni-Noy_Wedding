@@ -243,12 +243,36 @@ body.is-hebrew .thanks-title {
 
 body.is-hebrew .date {
   font-style: normal;
+  font-family: "Assistant", sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.date-block {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.date {
+  margin: 0;
+  font-family: var(--font-fr);
+  font-size: clamp(1.05rem, 1.8vh, 1.35rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 .date-hebrew {
-  font-size: clamp(1.6rem, 3vw, 2.8rem);
-  margin-bottom: 10px;
-  transform: translateY(-14px);
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(1.05rem, 1.8vh, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin: 0 0 4px;
+  transform: none;
 }
 
 .date-hebrew:empty {
